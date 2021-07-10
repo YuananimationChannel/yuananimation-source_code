@@ -173,7 +173,7 @@ class PlayState extends MusicBeatState
 	var bossred:Character;
 	var gfred:Character;
 	var bfred:Boyfriend;  
-	var Wired:Bool = false;
+	var Wired:Bool = false; //there glow lol
 	var wirebg:FlxSprite;
 	var bgred:FlxSprite;
 	var bgeve:FlxSprite;
