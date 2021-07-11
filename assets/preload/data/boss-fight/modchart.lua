@@ -4,14 +4,8 @@ function start (song)
     hudX = getHudX()
     hudY = getHudY()
 
-	Fading = makeSprite('Fading','fading', true)
+	
 	BlackBG = makeSprite('BlackFade','blackbg', true)
-
-	setActorX(738,'fading')
-	setActorY(660,'fading')
-	setActorAlpha(0,'fading')
-	setActorScale(2,'fading')
-
 	setActorX(200,'blackbg')
     setActorY(500,'blackbg')
     setActorAlpha(0,'blackbg')
@@ -51,7 +45,7 @@ function update (elapsed)
 	end
 	if swayingmedium then
 		for i=0,7 do
-			setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*5)), i)
+			setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*30)), i)
 			setActorY(_G['defaultStrum'..i..'Y'] + 10 * math.cos((currentBeat + i*30)) + 10, i)
 		end
 	end
@@ -209,10 +203,10 @@ function beatHit (beat)
 	    setCamZoom(1)
 	end
 	if camerahit then
-	    setCamZoom(2)
+	    setCamZoom(1.5)
 	end
 	if camerahit2 then
-	    setCamZoom(3)
+	    setCamZoom(1)
 	end
 end
 
@@ -251,10 +245,10 @@ function stepHit (step)
             setActorY(_G['defaultStrum'..i..'Y'],i)
        end
 	end
-	if step == 1472 then
+	if step == 1471 then
 	camerahit = true
 	end
-	if step == 1536 then
+	if step == 1535 then
 	camerahit = false
 	camerahit2 = true
 	end

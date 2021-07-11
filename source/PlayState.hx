@@ -173,10 +173,10 @@ class PlayState extends MusicBeatState
 	var bossred:Character;
 	var gfred:Character;
 	var bfred:Boyfriend;  
-	var Wired:Bool = false; //there glow lol
-	var wirebg:FlxSprite;
-	var bgred:FlxSprite;
-	var bgeve:FlxSprite;
+	var Wired:Bool = false; //they glow lol
+	var wirebg:FlxSprite; // why the fuck is city look like that
+	var bgred:FlxSprite; //OMG bf and yuan has glow
+	var bgeve:FlxSprite; //it unused
 
 	var fc:Bool = true;
 
@@ -3757,6 +3757,8 @@ class PlayState extends MusicBeatState
 						case 1343:
 						        Wired = false;
 								Wiredover();
+						case 1087: 
+							    bfred.playAnim('idle');
 						case 1796:
 						        Wired = true;
 								Wiredover();
