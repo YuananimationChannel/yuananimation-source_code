@@ -1290,7 +1290,8 @@ class PlayState extends MusicBeatState
 
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
-			if(SONG.song.toLowerCase()=='censory-overload' || SONG.song.toLowerCase() == 'termination'){
+			if(SONG.song.toLowerCase()=='boss-fight')
+			{
 				bossred.dance();
 				gfred.dance();
 				bfred.playAnim('idle');
@@ -3355,7 +3356,7 @@ class PlayState extends MusicBeatState
 				if(Wired){
 					if (bfred.animation.curAnim.name.startsWith('sing') && !bfred.animation.curAnim.name.endsWith('miss'))
 					{
-							bfred.playAnim('idle');
+						bfred.playAnim('idle');
 					}
 				}
 			}
