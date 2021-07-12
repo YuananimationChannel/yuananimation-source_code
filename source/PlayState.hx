@@ -726,7 +726,7 @@ class PlayState extends MusicBeatState
 				{
 						defaultCamZoom = 0.8;
 						curStage = 'yuaneve';
-						bgeve = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Evening/sunset'));
+						bgeve = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Evening/sunset','shared'));
 						bgeve.antialiasing = true;
 						bgeve.scrollFactor.set(0.9, 0.9);
 						bgeve.active = false;
@@ -736,7 +736,7 @@ class PlayState extends MusicBeatState
 				{ 
 						defaultCamZoom = 0.8;
 						curStage = 'red';
-						bgred = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Red/REDBG'));
+						bgred = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Red/REDBG','shared'));
 						bgred.antialiasing = true;
 						bgred.scrollFactor.set(0.9, 0.9);
 						bgred.active = false;
@@ -750,7 +750,7 @@ class PlayState extends MusicBeatState
 				        bossred.alpha = 0;
 				        gfred.alpha = 0;
 						//Cool wire BG
-						wirebg = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Red/WIREBG'));
+						wirebg = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Red/WIREBG','shared'));
 						wirebg.antialiasing = true;
 						wirebg.scrollFactor.set(0.9, 0.9);
 						wirebg.active = false;
