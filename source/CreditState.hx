@@ -47,7 +47,7 @@ class CreditState extends MusicBeatState
 			"peetagorad",
 			"TaeYai",
 			"Yuan animation Channel",
-			"Donate"
+			"Donate TO Funky Team"
 
         ];
         var initStuff:Array<String> = [
@@ -66,7 +66,7 @@ class CreditState extends MusicBeatState
         labels = [
 			"Original Dev",
             "Music",
-			"Coder Assistant",
+			"Second Coder",
 			"Mod creator",
 			"Original Game"
         ];
@@ -79,9 +79,6 @@ class CreditState extends MusicBeatState
 			allTheStuff.push(data[1]);
 			theLinks.push("https:" + data[2]);
 		}
-		// LOAD MUSIC
-
-		// LOAD CHARACTERS
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
 		add(bg);

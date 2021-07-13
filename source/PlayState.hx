@@ -91,7 +91,7 @@ class PlayState extends MusicBeatState
 	var halloweenLevel:Bool = false;
 
 	var songLength:Float = 0;
-	var kadeEngineWatermark:FlxText;
+	var kadeEngineWatermark:FlxText; //Hey Kade And Coder Out there Add My Discord TaeYai#2760 :)
 	
 	#if windows
 	// Discord RPC variables
@@ -174,7 +174,7 @@ class PlayState extends MusicBeatState
 	var gfred:Character;
 	var bfred:Boyfriend;  
 	var Wired:Bool = false; //they glow lol
-	var wirebg:FlxSprite; // why the fuck is city look like that
+	var wirebg:FlxSprite; // why the fuck is city look like that -TaeYai
 	var bgred:FlxSprite; //OMG bf and yuan has glow
 
 	var fc:Bool = true;
@@ -740,7 +740,7 @@ class PlayState extends MusicBeatState
 						bgred.scrollFactor.set(0.9, 0.9);
 						bgred.active = false;
 						add(bgred);
-						//What? It wire what you think Cool right?
+						//What? It wire Cool right? -TaeYai
 						bfred = new Boyfriend(1533.75, 715.85, 'bf-wire');
 						bossred = new Character(6.75, 120.35,'boss-wire');
 				        gfred = new Character(756.35, 350.45,'gf-wire');
@@ -2001,6 +2001,7 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.NINE)
 		{
+			//why we keep this button?
 			if (iconP1.animation.curAnim.name == 'bf-old')
 				iconP1.animation.play(SONG.player1);
 			else
@@ -2520,7 +2521,7 @@ class PlayState extends MusicBeatState
 						switch (Math.abs(daNote.noteData))
 						{
 							case 2:
-								if(Wired)
+								if(Wired) //Sing you fatass
 									bossred.playAnim('singUP' + altAnim, true);
 								else
 									dad.playAnim('singUP' + altAnim, true);
@@ -2644,10 +2645,10 @@ class PlayState extends MusicBeatState
 			keyShit();
 
 
-		if (FlxG.keys.justPressed.ONE)
+		if (FlxG.keys.justPressed.ONE) //Shhh Dont tell anyone i make this -TaeYai
 			endSong();
 	}
-	function Wiredover():Void
+	function Wiredover():Void //This Event Is Fun to make :) -TaeYai
 	{
 		if(Wired){
 			//What? There Are Neon
@@ -3407,7 +3408,7 @@ class PlayState extends MusicBeatState
 						if(Wired)
 							bfred.playAnim('singLEFTmiss', true);
 						else
-							boyfriend.playAnim('singLEFTmiss', true); //fuck this shit make game crash - taeyai
+							boyfriend.playAnim('singLEFTmiss', true); //fuck this shit it make game crash - taeyai
 					case 1:
 						if(Wired)
 							bfred.playAnim('singDOWNmiss', true);
@@ -3568,7 +3569,7 @@ class PlayState extends MusicBeatState
 					switch (note.noteData)
 						{
 							case 2:
-								if(Wired)
+								if(Wired) //Im very tired to make this - TaeYai
 									bfred.playAnim('singUP', true);
 								else
 									boyfriend.playAnim('singUP', true);
@@ -3744,7 +3745,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (SONG.song.toLowerCase() == 'boss-fight')
-			switch (curStep)
+			switch (curStep) //Make Them Glow!
 			{
 				        case 880:
 								dad.alpha = 0;
@@ -3757,7 +3758,7 @@ class PlayState extends MusicBeatState
 						        Wired = false;
 								Wiredover();
 						case 1087: 
-							    bfred.playAnim('idle');
+							    bfred.playAnim('idle'); //Fuck Why left animation stuck
 						case 1796:
 						        Wired = true;
 								Wiredover();
@@ -3859,7 +3860,7 @@ class PlayState extends MusicBeatState
 		{
 			if (!bfred.animation.curAnim.name.startsWith("sing"))
 			{
-				bfred.playAnim('idle');
+				bfred.playAnim('idle'); //keep dancing!
 			}
 			if(!(SONG.song.toLowerCase() == "boss-fight")){
 				if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && !bossred.animation.curAnim.name.startsWith("sing"))
