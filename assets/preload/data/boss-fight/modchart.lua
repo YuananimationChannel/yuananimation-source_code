@@ -169,10 +169,10 @@ function update (elapsed)
 	end
 	if noteswap then
 	for i=1,2 do
-			setActorY(_G['defaultStrum'..i..'Y'] - 100 * math.sin((currentBeat + i*5) * math.pi), i)
+			setActorY(_G['defaultStrum'..i..'Y'] - 60 * math.sin((currentBeat + i*40) * math.pi), i)
 		end
 		for i=5,6 do
-			setActorY(_G['defaultStrum'..i..'Y'] - 100 * math.cos((currentBeat + i*5) * math.pi), i)
+			setActorY(_G['defaultStrum'..i..'Y'] - 60 * math.cos((currentBeat + i*40) * math.pi), i)
 		end
 	for i=0,3 do
 			setActorX(_G['defaultStrum'..i..'X'] - 100 * math.sin((currentBeat + i*30) * math.pi), i)
@@ -183,10 +183,10 @@ function update (elapsed)
 	end
 	if noteswap2 then
 	for i=1,2 do
-			setActorY(_G['defaultStrum'..i..'Y'] - 100 * math.cos((currentBeat + i*30) * math.pi), i)
+			setActorY(_G['defaultStrum'..i..'Y'] - 40 * math.cos((currentBeat + i*20) * math.pi), i)
 		end
 		for i=5,6 do
-			setActorY(_G['defaultStrum'..i..'Y'] - 100 * math.cos((currentBeat + i*30) * math.pi), i)
+			setActorY(_G['defaultStrum'..i..'Y'] - 40 * math.cos((currentBeat + i*20) * math.pi), i)
 		end
 	for i=0,3 do
 			setActorX(_G['defaultStrum'..i..'X'] - 100 * math.cos((currentBeat + i*5) * math.pi), i)
