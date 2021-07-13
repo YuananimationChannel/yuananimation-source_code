@@ -2812,6 +2812,8 @@ class PlayState extends MusicBeatState
                     {
 					    case 'evening':
 				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/eveningCutscene.webm",new PlayState()));
+						case 'boss-fight':
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutscene.webm",new PlayState()));
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
