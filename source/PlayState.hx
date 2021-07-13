@@ -741,8 +741,8 @@ class PlayState extends MusicBeatState
 						bgred.active = false;
 						add(bgred);
 						//What? It wire what you think Cool right?
-						bfred = new Boyfriend(1314.4, 657.6, 'bf-wire');
-						bossred = new Character(271.8, 111.25,'boss-wire');
+						bfred = new Boyfriend(1533.75, 715.85, 'bf-wire');
+						bossred = new Character(6.75, 120.35,'boss-wire');
 				        gfred = new Character(756.35, 350.45,'gf-wire');
 				        gfred.scrollFactor.set(0.95, 0.95);
 				        bfred.alpha = 0;
@@ -856,8 +856,8 @@ class PlayState extends MusicBeatState
 				dad.y = 318.4;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'boss':
-				dad.x = 271.8;
-				dad.y = 111.25;
+				dad.x = 6.75;
+				dad.y = 120.35;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
 
@@ -913,14 +913,14 @@ class PlayState extends MusicBeatState
 				gf.x = 989.15;
 				gf.y = 345.6;
 			case 'red':
-				boyfriend.x = 1314.4;
-				boyfriend.y = 657.6;
+				boyfriend.x = 1533.75;
+				boyfriend.y = 715.85;
 				gf.x = 756.35;
 				gf.y = 350.45;
 				gfred.x = 756.35;
 				gfred.y = 350.45;
-				bfred.x = 1314.4;
-				bfred.y = 657.6;
+				bfred.x = 1533.75;
+				bfred.y = 715.85;
 		}
 
 		add(gf);
