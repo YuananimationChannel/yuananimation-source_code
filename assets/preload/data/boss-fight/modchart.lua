@@ -51,7 +51,7 @@ function update (elapsed)
 	end
 	if swayingrare then
 		for i=0,7 do
-			setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*30)), i)
+			setActorX(_G['defaultStrum'..i..'X'] + 32 * math.sin((currentBeat + i*20)), i)
 			setActorY(_G['defaultStrum'..i..'Y'] + 25 * math.cos((currentBeat + i*30)) + 20, i)
 		end
 	end
