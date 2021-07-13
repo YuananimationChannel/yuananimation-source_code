@@ -316,14 +316,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 
 				addOffset('idle', -5);
-				addOffset("singUP", -26, 13);
-				addOffset("singRIGHT", 3, 2);
-				addOffset("singLEFT", -4, 2);
-				addOffset("singDOWN", -1, 6);
-				addOffset("singUPmiss", -42, 52);
-				addOffset("singRIGHTmiss", -48, 40);
-				addOffset("singLEFTmiss", 10, 39);
-				addOffset("singDOWNmiss", -26, 7);
+				addOffset("singUP", -42, 33);
+				addOffset("singRIGHT", -47, -6);
+				addOffset("singLEFT", 29, -5);
+				addOffset("singDOWN", 14, -54);
+				addOffset("singUPmiss", -45, 50);
+				addOffset("singRIGHTmiss", -49, 44);
+				addOffset("singLEFTmiss", 31, 37);
+				addOffset("singDOWNmiss", 17, -3);
 
 				playAnim('idle');
 
@@ -342,14 +342,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 
 				addOffset('idle', -5);
-				addOffset("singUP", -26, 13);
-				addOffset("singRIGHT", 3, 2);
-				addOffset("singLEFT", -4, 2);
-				addOffset("singDOWN", -1, 6);
-				addOffset("singUPmiss", -42, 52);
-				addOffset("singRIGHTmiss", -48, 40);
-				addOffset("singLEFTmiss", 10, 39);
-				addOffset("singDOWNmiss", -26, 7);
+				addOffset("singUP", -42, 33);
+				addOffset("singRIGHT", -47, -6);
+				addOffset("singLEFT", 29, -5);
+				addOffset("singDOWN", 14, -54);
+				addOffset("singUPmiss", -45, 50);
+				addOffset("singRIGHTmiss", -49, 44);
+				addOffset("singLEFTmiss", 31, 37);
+				addOffset("singDOWNmiss", 17, -3);
 
 				playAnim('idle');
 
