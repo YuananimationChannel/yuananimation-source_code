@@ -176,7 +176,6 @@ class PlayState extends MusicBeatState
 	var Wired:Bool = false; //they glow lol
 	var wirebg:FlxSprite; // why the fuck is city look like that
 	var bgred:FlxSprite; //OMG bf and yuan has glow
-	var bgeve:FlxSprite; //it unused
 
 	var fc:Bool = true;
 
@@ -726,7 +725,7 @@ class PlayState extends MusicBeatState
 				{
 						defaultCamZoom = 0.8;
 						curStage = 'yuaneve';
-						bgeve = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Evening/sunset','shared'));
+						var bgeve:FlxSprite = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Evening/sunset','shared'));
 						bgeve.antialiasing = true;
 						bgeve.scrollFactor.set(0.9, 0.9);
 						bgeve.active = false;
@@ -2090,7 +2089,7 @@ class PlayState extends MusicBeatState
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
 
-		#if debug
+		
 		if (FlxG.keys.justPressed.EIGHT)
 		{
 			FlxG.switchState(new AnimationDebug(SONG.player2));
@@ -2103,7 +2102,7 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
-		if (FlxG.keys.justPressed.ZERO)
+		if (FlxG.keys.justPressed.TWO)
 		{
 			FlxG.switchState(new AnimationDebug(SONG.player1));
 			#if windows
@@ -2114,8 +2113,6 @@ class PlayState extends MusicBeatState
 			}
 			#end
 		}
-
-		#end
 
 		if (startingSong)
 		{
@@ -3410,7 +3407,7 @@ class PlayState extends MusicBeatState
 						if(Wired)
 							bfred.playAnim('singLEFTmiss', true);
 						else
-							bfred.playAnim('singLEFTmiss', true);
+							boyfriend.playAnim('singLEFTmiss', true); //fix this shit
 					case 1:
 						if(Wired)
 							bfred.playAnim('singDOWNmiss', true);
