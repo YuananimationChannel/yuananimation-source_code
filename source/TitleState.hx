@@ -234,7 +234,7 @@ class TitleState extends MusicBeatState
 
 	function getIntroTextShit():Array<Array<String>>
 	{
-		var fullText:String = Assets.getText(Paths.txt('introText'));
+		var fullText:String = Assets.getText(Paths.txt('introyuan'));
 
 		var firstArray:Array<String> = fullText.split('\n');
 		var swagGoodArray:Array<Array<String>> = [];
@@ -243,6 +243,7 @@ class TitleState extends MusicBeatState
 		{
 			swagGoodArray.push(i.split('--'));
 		}
+		
 
 		return swagGoodArray;
 	}
@@ -395,59 +396,42 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-			// credTextShit.visible = true;
+				createCoolText(['Original FNF By']);
 			case 3:
-				addMoreText('present');
-			// credTextShit.text += '\npresent...';
-			// credTextShit.addText();
+				createCoolText(['','ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 			case 4:
 				deleteCoolText();
-			// credTextShit.visible = false;
-			// credTextShit.text = 'In association \nwith';
-			// credTextShit.screenCenter();
 			case 5:
 				if (Main.watermarks)
 					createCoolText(['Kade Engine', 'by']);
-				else
-					createCoolText(['In Partnership', 'with']);
 			case 7:
 				if (Main.watermarks)
 					addMoreText('KadeDeveloper');
-				else
-				{
-					addMoreText('Newgrounds');
-					ngSpr.visible = true;
-				}
-			// credTextShit.text += '\nNewgrounds';
 			case 8:
 				deleteCoolText();
-				ngSpr.visible = false;
-			// credTextShit.visible = false;
-
-			// credTextShit.text = 'Shoutouts Tom Fulp';
-			// credTextShit.screenCenter();
+				createCoolText(['MOD', 'by']);
 			case 9:
-				createCoolText([curWacky[0]]);
-			// credTextShit.visible = true;
+				addMoreText('Yuan Animation');
+			case 10:
+				deleteCoolText();
+				createCoolText(['HELP', 'by']);
 			case 11:
-				addMoreText(curWacky[1]);
-			// credTextShit.text += '\nlmao';
+				createCoolText(['','','TaeYai', 'PEE.taGOraD']);
 			case 12:
 				deleteCoolText();
-			// credTextShit.visible = false;
-			// credTextShit.text = "Friday";
-			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
-			// credTextShit.visible = true;
+				createCoolText([curWacky[0]]);
 			case 14:
-				addMoreText('Night');
-			// credTextShit.text += '\nNight';
+				addMoreText(curWacky[1]);
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
+				deleteCoolText();
 			case 16:
+				addMoreText('Yuan');
+			case 17:
+				addMoreText('Animation');
+			case 18:
+				addMoreText('Channel');
+			case 19:
 				skipIntro();
 		}
 	}

@@ -3407,7 +3407,7 @@ class PlayState extends MusicBeatState
 						if(Wired)
 							bfred.playAnim('singLEFTmiss', true);
 						else
-							boyfriend.playAnim('singLEFTmiss', true); //fix this shit
+							boyfriend.playAnim('singLEFTmiss', true); //fuck this shit make game crash - taeyai
 					case 1:
 						if(Wired)
 							bfred.playAnim('singDOWNmiss', true);
