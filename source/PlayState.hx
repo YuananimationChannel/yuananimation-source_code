@@ -2804,6 +2804,10 @@ class PlayState extends MusicBeatState
 					prevCamFollow = camFollow;
 
 					PlayState.SONG = Song.loadFromJson(nextSongLowercase + difficulty, PlayState.storyPlaylist[0]);
+					if (songLowercase == 'boss-fight')
+					{
+						Song.loadFromJson('tutorial');
+					}
 					FlxG.sound.music.stop();
 
 					switch(SONG.song.toLowerCase())
