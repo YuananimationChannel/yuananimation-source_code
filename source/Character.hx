@@ -87,7 +87,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'gf-red':
+			/*case 'gf-red':
 				tex = Paths.getSparrowAtlas('characters/gfred','shared');
 				frames = tex;
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -108,7 +108,21 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -20);
 
 
-				playAnim('danceRight');
+				playAnim('danceRight');*/
+			case 'gf-red':
+                tex = Paths.getSparrowAtlas('characters/gfred');
+                frames = tex;
+                animation.addByPrefix('shoot1', 'GF left note', 24, false);
+                animation.addByPrefix('shoot2', 'GF Right Note', 24, false);
+                animation.addByPrefix('idle', 'GF Dancing Beat0', 24, false);
+
+                addOffset('shoot1', 585, 0);
+                addOffset('shoot2');
+                addOffset('idle');
+
+                loadMappedAnims();
+
+                playAnim('idle');
 
 			case 'gf-wire':
 				tex = Paths.getSparrowAtlas('characters/gfwire','shared');
@@ -777,6 +791,22 @@ class Character extends FlxSprite
 			case 'gf':
 				if (animation.curAnim.name == 'hairFall' && animation.curAnim.finished)
 					playAnim('danceRight');
+			case 'gf-red':
+                if (animationNotes.length > 0 && Conductor.songPosition > animationNotes[0][0])
+                {
+                    var shootAnim = 1;
+                    if (animationNotes[0][1] >= 2)
+                        shootAnim = 2;
+
+                    shootAnim += FlxG.random.int(0, 1);
+                    playAnim("shoot" + shootAnim, true);
+                    animationNotes.shift();
+                }
+                if (animation.curAnim != null && animation.curAnim.finished)
+                {
+                    playAnim(animation.curAnim.name, false, false, animation.curAnim.frames.length - 3);
+					playAnim('idle');
+                }
 		}
 
 		super.update(elapsed);
@@ -845,7 +875,7 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
-					case 'gf-red':
+					/*case 'gf-red':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
@@ -854,7 +884,7 @@ class Character extends FlxSprite
 							playAnim('danceRight');
 						else
 							playAnim('danceLeft');
-					}
+					}*/
 					case 'gf-wire':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
@@ -873,6 +903,10 @@ class Character extends FlxSprite
 						playAnim('danceRight');
 					else
 						playAnim('danceLeft');
+					case 'gf-red':
+						{
+							trace('HE SHOOT!');
+						}
 				default:
 					playAnim('idle');
 			}
@@ -908,6 +942,26 @@ class Character extends FlxSprite
 			}
 		}
 	}
+	public var animationNotes:Array<Dynamic> = [];
+
+    public function loadMappedAnims()
+    {
+        var pcio = Song.loadFromJson("shootspeaker", "boss-fight").notes;
+        for (i in pcio)
+        {
+            for (note in i.sectionNotes)
+            {
+                animationNotes.push(note);
+            }
+        }
+        animationNotes.sort(sortAnims);
+    }
+	function sortAnims(a, b)
+		{
+			var aThing = a[0];
+			var bThing = b[0];
+			return aThing < bThing ? -1 : 1;
+		}
 
 	public function addOffset(name:String, x:Float = 0, y:Float = 0)
 	{

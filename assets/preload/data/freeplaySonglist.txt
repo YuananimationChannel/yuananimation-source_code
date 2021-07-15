@@ -20,3 +20,4 @@ Thorns:spirit:6
 Yuan Time:yuan:7
 Evening:yuan:7
 Boss Fight:boss:7
+shootspeaker:boss:7
