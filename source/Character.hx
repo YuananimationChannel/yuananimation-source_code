@@ -87,42 +87,22 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			/*case 'gf-red':
-				tex = Paths.getSparrowAtlas('characters/gfred','shared');
+			case 'gf-red'://ok now get confused which file we use for gf-red :) - TaeYai 
+				tex = Paths.getSparrowAtlas('characters/GF_Red','shared');
 				frames = tex;
-				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
-				animation.addByPrefix('singRIGHT', 'GF Right Note', 24, false);
-				animation.addByPrefix('singUP', 'GF Up Note', 24, false);
-				animation.addByPrefix('singDOWN', 'GF Down Note', 24, false);
-				animation.addByIndices('sad', 'gf sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
-				animation.addByIndices('danceLeft', 'GF Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-				animation.addByIndices('danceRight', 'GF Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByPrefix('shoot1', 'Shoot left', 24, false); //Fuck why offset Auto Change
+                animation.addByPrefix('shoot2', 'Shoot right', 24, false);
+                animation.addByIndices('idle1', 'idle', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+                animation.addByIndices('idle2', 'idle', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 
-				addOffset('sad', -2, -2);
-				addOffset('danceLeft', 0, -9);
-				addOffset('danceRight', 0, -9);
-
-				addOffset("singUP", 0, 4);
-				addOffset("singRIGHT", 0, -20);
-				addOffset("singLEFT", 0, -19);
-				addOffset("singDOWN", 0, -20);
-
-
-				playAnim('danceRight');*/
-			case 'gf-red':
-                tex = Paths.getSparrowAtlas('characters/gfred');
-                frames = tex;
-                animation.addByPrefix('shoot1', 'GF left note', 24, false);
-                animation.addByPrefix('shoot2', 'GF Right Note', 24, false);
-                animation.addByPrefix('idle', 'GF Dancing Beat0', 24, false);
-
-                addOffset('shoot1', 585, 0);
+				addOffset("shoot1", 585, 0);
                 addOffset('shoot2');
-                addOffset('idle');
+                addOffset('idle1');
+                addOffset('idle2');
 
                 loadMappedAnims();
 
-                playAnim('idle');
+                playAnim('idle1');
 
 			case 'gf-wire':
 				tex = Paths.getSparrowAtlas('characters/gfwire','shared');
@@ -796,7 +776,7 @@ class Character extends FlxSprite
                 {
                     var shootAnim = 1;
                     if (animationNotes[0][1] >= 2)
-                        shootAnim = 2;
+                        shootAnim = 3;
 
                     shootAnim += FlxG.random.int(0, 1);
                     playAnim("shoot" + shootAnim, true);
@@ -805,7 +785,7 @@ class Character extends FlxSprite
                 if (animation.curAnim != null && animation.curAnim.finished)
                 {
                     playAnim(animation.curAnim.name, false, false, animation.curAnim.frames.length - 3);
-					playAnim('idle');
+					dance();
                 }
 		}
 
@@ -875,16 +855,16 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
-					/*case 'gf-red':
+					case 'gf-red':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
 						danced = !danced;
 
 						if (danced)
-							playAnim('danceRight');
+							playAnim('idle1');
 						else
-							playAnim('danceLeft');
-					}*/
+							playAnim('idle2');
+					}
 					case 'gf-wire':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{
@@ -903,10 +883,8 @@ class Character extends FlxSprite
 						playAnim('danceRight');
 					else
 						playAnim('danceLeft');
-					case 'gf-red':
-						{
-							trace('HE SHOOT!');
-						}
+				case 'gf-red':
+					trace('SHOOT THEM ALL');
 				default:
 					playAnim('idle');
 			}
@@ -944,7 +922,7 @@ class Character extends FlxSprite
 	}
 	public var animationNotes:Array<Dynamic> = [];
 
-    public function loadMappedAnims()
+    public function loadMappedAnims() //just fucking kill me this is hard code - TaeYai
     {
         var pcio = Song.loadFromJson("shootspeaker", "boss-fight").notes;
         for (i in pcio)
