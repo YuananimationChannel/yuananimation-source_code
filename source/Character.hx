@@ -100,7 +100,7 @@ class Character extends FlxSprite
                 addOffset('idle1');
                 addOffset('idle2');
 
-                loadMappedAnims();
+                //LoadMappedAnims(); im dont with it offset is auto change
 
                 playAnim('idle1');
 
