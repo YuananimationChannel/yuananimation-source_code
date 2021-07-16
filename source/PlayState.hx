@@ -2731,6 +2731,7 @@ class PlayState extends MusicBeatState
 			if (isStoryMode)
 			{
 				campaignScore += Math.round(songScore);
+				var bossded:String = storyPlaylist[0].toLowerCase();
 
 				storyPlaylist.remove(storyPlaylist[0]);
 
@@ -2740,6 +2741,21 @@ class PlayState extends MusicBeatState
 
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
+
+					switch (bossded) //make it play when storyend
+						{
+							case "boss-fight":
+							{
+								LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));
+							}
+							default:
+							{
+								FlxG.sound.playMusic(Paths.music('freakyMenu'));
+								FlxG.switchState(new StoryMenuState());
+							}
+						}
+
+
 
 					FlxG.switchState(new StoryMenuState());
 
@@ -2812,8 +2828,7 @@ class PlayState extends MusicBeatState
 				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/eveningCutscene.webm",new PlayState()));
 						case 'boss-fight':
 							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutscene.webm",new PlayState()));
-						case 'boss-fight':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));
+						
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
