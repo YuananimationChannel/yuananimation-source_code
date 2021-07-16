@@ -425,12 +425,6 @@ class TitleState extends MusicBeatState
 				addMoreText(curWacky[1]);
 			case 15:
 				deleteCoolText();
-				addMoreText('Yuan');
-			case 16:
-				addMoreText('Animation');
-			case 17:
-				addMoreText('Channel');
-			case 18:
 				skipIntro();
 		}
 	}
