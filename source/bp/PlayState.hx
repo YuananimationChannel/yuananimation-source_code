@@ -2731,11 +2731,13 @@ class PlayState extends MusicBeatState
 			if (isStoryMode)
 			{
 				campaignScore += Math.round(songScore);
+				var bossded:String = storyPlaylist[0].toLowerCase();
 
 				storyPlaylist.remove(storyPlaylist[0]);
 
 				if (storyPlaylist.length <= 0)
 				{
+
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
 
@@ -2749,11 +2751,6 @@ class PlayState extends MusicBeatState
 							FlxG.sound.playMusic(Paths.music('freakyMenu'));
 							FlxG.switchState(new StoryMenuState());
 					}
-
-
-
-
-					FlxG.switchState(new StoryMenuState());
 
 					#if windows
 					if (luaModchart != null)
