@@ -91,7 +91,7 @@ class Character extends FlxSprite
 				tex = Paths.getSparrowAtlas('characters/GF_Red','shared');
 				frames = tex;
 				animation.addByPrefix('shoot1', 'Shoot left', 24, false); //Fuck why offset Auto Change
-                animation.addByPrefix('shoot2', 'Shoot right0', 24, false);
+                animation.addByPrefix('shoot2', 'Shoot Right0', 24, false);
                 animation.addByIndices('idle1', 'idle', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
                 animation.addByIndices('idle2', 'idle', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 
@@ -100,7 +100,7 @@ class Character extends FlxSprite
                 addOffset('idle1');
                 addOffset('idle2');
 
-                //LoadMappedAnims(); im dont with it offset is auto change
+                loadMappedAnims();
 
                 playAnim('idle1');
 

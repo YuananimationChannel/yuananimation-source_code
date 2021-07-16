@@ -2804,10 +2804,6 @@ class PlayState extends MusicBeatState
 					prevCamFollow = camFollow;
 
 					PlayState.SONG = Song.loadFromJson(nextSongLowercase + difficulty, PlayState.storyPlaylist[0]);
-					if (songLowercase == 'boss-fight')
-					{
-						Song.loadFromJson('tutorial');
-					}
 					FlxG.sound.music.stop();
 
 					switch(SONG.song.toLowerCase())
@@ -2816,6 +2812,8 @@ class PlayState extends MusicBeatState
 				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/eveningCutscene.webm",new PlayState()));
 						case 'boss-fight':
 							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutscene.webm",new PlayState()));
+						case 'boss-fight':
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
