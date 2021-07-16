@@ -2746,7 +2746,7 @@ class PlayState extends MusicBeatState
 						{
 							case "boss-fight":
 							{
-								LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));
+								LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new MainMenuState()));
 							}
 							default:
 							{
