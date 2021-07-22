@@ -1545,7 +1545,8 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote);
+				var daType = songNotes[3];
+				var swagNote:Note = new Note(daStrumTime, daNoteData, oldNote, false, daType);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
 
@@ -1558,7 +1559,7 @@ class PlayState extends MusicBeatState
 				{
 					oldNote = unspawnNotes[Std.int(unspawnNotes.length - 1)];
 
-					var sustainNote:Note = new Note(daStrumTime + (Conductor.stepCrochet * susNote) + Conductor.stepCrochet, daNoteData, oldNote, true);
+					var sustainNote:Note = new Note(daStrumTime + (Conductor.stepCrochet * susNote) + Conductor.stepCrochet, daNoteData, oldNote, true, daType);
 					sustainNote.scrollFactor.set();
 					unspawnNotes.push(sustainNote);
 
@@ -2607,29 +2608,56 @@ class PlayState extends MusicBeatState
 					//trace(daNote.y);
 					// WIP interpolation shit? Need to fix the pause issue
 					// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));
-	
 					if ((daNote.mustPress && daNote.tooLate && !FlxG.save.data.downscroll || daNote.mustPress && daNote.tooLate && FlxG.save.data.downscroll) && daNote.mustPress)
-					{
-							if (daNote.isSustainNote && daNote.wasGoodHit)
+					switch (daNote.noteType) 
 							{
-								daNote.kill();
-								notes.remove(daNote, true);
-							}
-							else
-							{
-								health -= 0.075;
-								vocals.volume = 0;
-								if (theFunne)
-									noteMiss(daNote.noteData, daNote);
-							}
-		
-							daNote.visible = false;
-							daNote.kill();
-							notes.remove(daNote, true);
-						}
+						
+								case 0:
+								{
+									if (daNote.isSustainNote && daNote.wasGoodHit)
+										{
+
+											daNote.kill();
+											notes.remove(daNote, true);
+											daNote.destroy();
+											
+										}
+									else
+										{
+											if (daNote.mustPress)
+											{
+												health -= 0.075;
+												vocals.volume = 0;
+												if (theFunne)
+													noteMiss(daNote.noteData, daNote);
+
+											}
+										}
 					
-				});
-			}
+										daNote.active = false;
+										daNote.visible = false;
+					
+										daNote.kill();
+										notes.remove(daNote, true);
+										daNote.destroy();
+								}
+								case 2: 
+								{
+									daNote.kill();
+									notes.remove(daNote, true);
+									daNote.destroy();
+								}
+								case 3:
+									health -= 1;
+									FlxG.sound.play(Paths.sound('shooters', 'shared'), 0.6);
+									vocals.volume = 0;
+									if (theFunne)
+										noteMiss(daNote.noteData, daNote);
+									
+							}
+						
+					});
+				}
 
 		if (FlxG.save.data.cpuStrums)
 		{
@@ -2907,6 +2935,7 @@ class PlayState extends MusicBeatState
                 sploosh.animation.finishCallback = function(name) sploosh.kill();
             }
         }
+		
 			var noteDiff:Float = Math.abs(Conductor.songPosition - daNote.strumTime);
 			var wife:Float = EtternaFunctions.wife3(noteDiff, Conductor.timeScale);
 			// boyfriend.playAnim('hey');
@@ -2957,12 +2986,21 @@ class PlayState extends MusicBeatState
 						health += 0.04;
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 0.75;
+
 				case 'sick':
+					if (daNote.noteType == 2)
+					{
+						health -= 2;
+					}
+					else if (daNote.noteType == 3)
+					{
+						FlxG.sound.play(Paths.sound('shooters', 'shared'), 0.6);
+					}
 					if (health < 2)
 						health += 0.1;
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 1;
-					sicks++;
+					    sicks++;
 			}
 
 			// trace('Wife accuracy loss: ' + wife + ' | Rating: ' + daRating + ' | Score: ' + score + ' | Weight: ' + (1 - wife));
@@ -3447,7 +3485,10 @@ class PlayState extends MusicBeatState
 						else
 							boyfriend.playAnim('singRIGHTmiss', true);
 				}
-			
+				if (daNote.noteType == 3)
+				{
+					boyfriend.playAnim('scared', true);
+				}
 
 			#if windows
 			if (luaModchart != null)
@@ -3558,7 +3599,7 @@ class PlayState extends MusicBeatState
 
 		function goodNoteHit(note:Note, resetMashViolation = true):Void
 			{
-
+				
 				if (mashing != 0)
 					mashing = 0;
 
@@ -3612,6 +3653,7 @@ class PlayState extends MusicBeatState
 									boyfriend.playAnim('singLEFT', true);
 						}
 		
+					
 					#if windows
 					if (luaModchart != null)
 						luaModchart.executeState('playerOneSing', [note.noteData, Conductor.songPosition]);

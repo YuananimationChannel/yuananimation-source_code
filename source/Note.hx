@@ -34,16 +34,17 @@ class Note extends FlxSprite
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
+	public var noteType:Int = 0;
 
 	public var rating:String = "shit";
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?noteType:Int = 0, ?inCharter:Bool = false)
 	{
 		super();
 
-		if (prevNote == null)
+		if (prevNote == null)	
 			prevNote = this;
-
+		this.noteType = noteType;
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
 
@@ -90,9 +91,10 @@ class Note extends FlxSprite
 			if (PlayState.SONG.stage == 'yuanstage')
 				{
 					frames = Paths.getSparrowAtlas('Yuan/NOTE_assets');
-				} else {
-					frames = Paths.getSparrowAtlas('NOTE_assets');
-				}
+				} 
+				else 
+				{
+				frames = Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -112,6 +114,37 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
+				}
+				if(noteType == 2)
+				{
+		
+					frames = Paths.getSparrowAtlas('Red/ALL_deathnotes');
+					animation.addByPrefix('greenScroll', 'Green Arrow'); 
+					animation.addByPrefix('redScroll', 'Red Arrow');
+					animation.addByPrefix('blueScroll', 'Blue Arrow');
+					animation.addByPrefix('purpleScroll', 'Purple Arrow');
+					animation.addByPrefix('whiteScroll', 'White Arrow');
+					animation.addByPrefix('yellowScroll', 'Green Arrow');
+					animation.addByPrefix('violetScroll', 'Red Arrow');
+					animation.addByPrefix('blackScroll', 'Blue Arrow');
+					animation.addByPrefix('darkScroll', 'Purple Arrow');
+					setGraphicSize(Std.int(width * 0.7));
+					
+				}
+			
+				if(noteType == 3)
+					{
+						frames = Paths.getSparrowAtlas('warningNote');
+						animation.addByPrefix('greenScroll', 'Green Arrow');
+						animation.addByPrefix('redScroll', 'Red Arrow');
+						animation.addByPrefix('blueScroll', 'Blue Arrow');
+						animation.addByPrefix('purpleScroll', 'Purple Arrow');
+						animation.addByPrefix('whiteScroll', 'Blue Arrow');
+						animation.addByPrefix('yellowScroll', 'Green Arrow');
+						animation.addByPrefix('violetScroll', 'Red Arrow');
+						animation.addByPrefix('blackScroll', 'Blue Arrow');
+						animation.addByPrefix('darkScroll', 'Purple Arrow');
+					}
 				
 			case 'yuaneve':
 		    if (PlayState.SONG.stage == 'yuaneve')
@@ -162,6 +195,10 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
+			
+			
+
+				
 		}
 
 		switch (noteData)
