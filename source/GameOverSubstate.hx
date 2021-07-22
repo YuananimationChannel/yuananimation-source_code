@@ -83,13 +83,15 @@ class GameOverSubstate extends MusicBeatSubstate
 			switch (PlayState.SONG.stage)
 		    {
 			case 'yuanstage':
-				//FlxG.sound.play(Paths.sound('sorry'), 2);
+				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 				FlxG.sound.play(Paths.soundRandom('sorry', 1, 2));
 			case 'yuaneve':
 				FlxG.sound.play(Paths.soundRandom('sorry', 1, 2));
+				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 				//FlxG.sound.play(Paths.sound('sorry'), 2);
 			case 'red':
 				FlxG.sound.play(Paths.soundRandom('boss', 1, 8));
+				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 			default:
 				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 		    }
