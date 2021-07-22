@@ -88,12 +88,6 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
             default:
-			if (PlayState.SONG.stage == 'yuanstage')
-				{
-					frames = Paths.getSparrowAtlas('Yuan/NOTE_assets');
-				} 
-				else 
-				{
 				frames = Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
@@ -114,22 +108,17 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
-				}
+				
 				if(noteType == 2)
 				{
 		
 					frames = Paths.getSparrowAtlas('Red/ALL_deathnotes');
-					animation.addByPrefix('greenScroll', 'Green Arrow'); 
+					animation.addByPrefix('greenScroll', 'Green Arrow');
 					animation.addByPrefix('redScroll', 'Red Arrow');
 					animation.addByPrefix('blueScroll', 'Blue Arrow');
 					animation.addByPrefix('purpleScroll', 'Purple Arrow');
-					animation.addByPrefix('whiteScroll', 'White Arrow');
-					animation.addByPrefix('yellowScroll', 'Green Arrow');
-					animation.addByPrefix('violetScroll', 'Red Arrow');
-					animation.addByPrefix('blackScroll', 'Blue Arrow');
-					animation.addByPrefix('darkScroll', 'Purple Arrow');
+					x -= 165;
 					setGraphicSize(Std.int(width * 0.7));
-					
 				}
 			
 				if(noteType == 3)
@@ -139,18 +128,33 @@ class Note extends FlxSprite
 						animation.addByPrefix('redScroll', 'Red Arrow');
 						animation.addByPrefix('blueScroll', 'Blue Arrow');
 						animation.addByPrefix('purpleScroll', 'Purple Arrow');
-						animation.addByPrefix('whiteScroll', 'Blue Arrow');
-						animation.addByPrefix('yellowScroll', 'Green Arrow');
-						animation.addByPrefix('violetScroll', 'Red Arrow');
-						animation.addByPrefix('blackScroll', 'Blue Arrow');
-						animation.addByPrefix('darkScroll', 'Purple Arrow');
 					}
-				
+				updateHitbox();
+				antialiasing = true;
+			
+			case 'yuannote':
+			frames = Paths.getSparrowAtlas('Yuan/NOTE_assets');
+			animation.addByPrefix('greenScroll', 'green0');
+			animation.addByPrefix('redScroll', 'red0');
+			animation.addByPrefix('blueScroll', 'blue0');
+			animation.addByPrefix('purpleScroll', 'purple0');
+
+			animation.addByPrefix('purpleholdend', 'pruple end hold');
+			animation.addByPrefix('greenholdend', 'green hold end');
+			animation.addByPrefix('redholdend', 'red hold end');
+			animation.addByPrefix('blueholdend', 'blue hold end');
+
+			animation.addByPrefix('purplehold', 'purple hold piece');
+			animation.addByPrefix('greenhold', 'green hold piece');
+			animation.addByPrefix('redhold', 'red hold piece');
+			animation.addByPrefix('bluehold', 'blue hold piece');
+
+			setGraphicSize(Std.int(width * 0.7));
+			updateHitbox();
+			antialiasing = true;
+
 			case 'yuaneve':
-		    if (PlayState.SONG.stage == 'yuaneve')
-				{
 					frames = Paths.getSparrowAtlas('Evening/NOTE_assets');
-				}
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -172,10 +176,7 @@ class Note extends FlxSprite
 				antialiasing = true;
 				                                                          
 		    case 'red':
-		    if (PlayState.SONG.stage == 'red')
-				{
 					frames = Paths.getSparrowAtlas('Red/NOTE_assets');
-				}
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -195,10 +196,6 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
-			
-			
-
-				
 		}
 
 		switch (noteData)

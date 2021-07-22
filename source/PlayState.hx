@@ -1675,7 +1675,7 @@ class PlayState extends MusicBeatState
 							babyArrow.animation.addByPrefix('confirm', 'right confirm', 24, false);
 						}
 
-				case 'yuan':
+				case 'yuannote':
 					babyArrow.frames = Paths.getSparrowAtlas('Yuan/NOTE_assets');
 					babyArrow.animation.addByPrefix('green', 'arrowUP');
 					babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
