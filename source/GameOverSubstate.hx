@@ -40,7 +40,9 @@ class GameOverSubstate extends MusicBeatSubstate
 		add(camFollow);
 
 		FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
+		//FlxG.sound.play(Paths.sound('sorry'));
 		Conductor.changeBPM(100);
+		
 
 		// FlxG.camera.followLerp = 1;
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
@@ -78,6 +80,19 @@ class GameOverSubstate extends MusicBeatSubstate
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			switch (PlayState.SONG.stage)
+		    {
+			case 'yuanstage':
+				//FlxG.sound.play(Paths.sound('sorry'), 2);
+				FlxG.sound.play(Paths.soundRandom('sorry', 1, 2));
+			case 'yuaneve':
+				FlxG.sound.play(Paths.soundRandom('sorry', 1, 2));
+				//FlxG.sound.play(Paths.sound('sorry'), 2);
+			case 'red':
+				FlxG.sound.play(Paths.soundRandom('boss', 1, 8));
+			default:
+				FlxG.sound.playMusic(Paths.sound('sorry'), 0);
+		    }
 		}
 
 		if (FlxG.sound.music.playing)
