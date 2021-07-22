@@ -79,6 +79,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
+			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
 			switch (PlayState.SONG.stage)
 		    {
 			case 'yuanstage':
