@@ -3823,7 +3823,7 @@ class PlayState extends MusicBeatState
 								Wiredover();
 						case 1087: 
 							    bfred.playAnim('idle'); //Fuck Why left animation stuck
-						case 1796:
+						case 1791:
 						        Wired = true;
 								Wiredover();
 						case 1856:
