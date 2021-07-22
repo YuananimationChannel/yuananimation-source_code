@@ -1,5 +1,6 @@
 package;
 
+import flixel.util.FlxSave;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -47,6 +48,7 @@ class TitleState extends MusicBeatState
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
+	static public var _yuansave:FlxSave;
 
 	override public function create():Void
 	{
@@ -89,6 +91,9 @@ class TitleState extends MusicBeatState
 		#end
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
+		_yuansave = new FlxSave();
+		_yuansave.bind('yuan', 'vsYuan');
+		trace(_yuansave.path);
 
 		KadeEngineData.initSave();
 

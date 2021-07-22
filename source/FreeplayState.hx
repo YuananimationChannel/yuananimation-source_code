@@ -10,6 +10,8 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 
+import TitleState._yuansave;
+
 
 #if windows
 import Discord.DiscordClient;
@@ -43,6 +45,13 @@ class FreeplayState extends MusicBeatState
 		{
 			var data:Array<String> = initSonglist[i].split(':');
 			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
+		}
+		if (_yuansave.data.weekUnlocked != null)
+			StoryMenuState.weekUnlocked = _yuansave.data.weekUnlocked;
+
+	    if (StoryMenuState.weekUnlocked[8])
+		{
+			songs.push(new SongMetadata("beebaaboo", 8, "yuan"));
 		}
 
 		/* 

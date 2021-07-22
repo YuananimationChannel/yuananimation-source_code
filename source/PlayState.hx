@@ -54,6 +54,8 @@ import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
 
+import TitleState._yuansave;
+
 #if windows
 import Discord.DiscordClient;
 #end
@@ -2743,6 +2745,14 @@ class PlayState extends MusicBeatState
 					{
 						case "boss-fight":
 								FlxG.switchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));
+									if (accuracy > 10 && storyDifficulty != 0)
+									{
+										trace("Good save");
+										StoryMenuState.weekUnlocked[8] = true;
+										_yuansave.data.weekUnlocked = StoryMenuState.weekUnlocked;
+										_yuansave.flush();
+										trace("END!");
+									}
 						/*case "evening":
 								FlxG.switchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));*/
 						default:

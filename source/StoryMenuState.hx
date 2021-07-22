@@ -13,6 +13,8 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 
+import TitleState._yuansave;
+
 #if windows
 import Discord.DiscordClient;
 #end
@@ -84,6 +86,9 @@ class StoryMenuState extends MusicBeatState
 
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
+
+		if (_yuansave.data.weekUnlocked != null)
+			StoryMenuState.weekUnlocked = _yuansave.data.weekUnlocked;
 
 		if (FlxG.sound.music != null)
 		{
