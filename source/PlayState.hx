@@ -268,7 +268,14 @@ class PlayState extends MusicBeatState
 			case 0:
 				storyDifficultyText = "Easy";
 			case 1:
-				storyDifficultyText = "Normal";
+				switch (curSong.toLowerCase())
+				{
+					case 'Beebaaboo':
+						storyDifficultyText = "Fun With Yuan";
+					default:
+						storyDifficultyText = "Normal";
+				}				
+
 			case 2:
 				storyDifficultyText = "Hard";
 		}
