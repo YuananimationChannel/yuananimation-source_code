@@ -29,6 +29,7 @@ class FreeplayState extends MusicBeatState
 
 	var scoreText:FlxText;
 	var diffText:FlxText;
+	var onlyone:Bool = false;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
 
@@ -198,6 +199,17 @@ class FreeplayState extends MusicBeatState
 		{
 			changeSelection(1);
 		}
+
+		if (curSelected == 3)
+			{
+				onlyone = true;
+				changeDiff(2 - curDifficulty);
+			}
+		if (curSelected != 3 && goku == true)
+			{
+				onlyone = false;
+				changeDiff(4);
+			
 
 		if (controls.LEFT_P)
 			changeDiff(-1);
