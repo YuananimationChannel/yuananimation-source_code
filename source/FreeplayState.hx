@@ -248,10 +248,10 @@ class FreeplayState extends MusicBeatState
 	
 			if (curSelected == 3)
 				{
-					if (curDifficulty < 1)
-						curDifficulty = 1;
-					if (curDifficulty > 1)
-						curDifficulty = 1;
+					if (curDifficulty < 2)
+						curDifficulty = 2;
+					if (curDifficulty > 2)
+						curDifficulty = 2;
 				}
 				else
 					{
@@ -280,7 +280,7 @@ class FreeplayState extends MusicBeatState
 			case 1:
 				if (curSelected == 3)
 					{
-						diffText.text = 'Yuan';
+						diffText.text = 'Have fun';
 					}
 					else
 						{
