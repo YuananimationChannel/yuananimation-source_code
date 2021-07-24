@@ -216,6 +216,7 @@ class FreeplayState extends MusicBeatState
 			switch (songLowercase) {
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
+				case 'Yuan-Time': songLowercase = 'Yuantime';
 			}
 			// adjusting the highscore song name to be compatible (update)
 			// would read original scores if we didn't change packages
@@ -223,6 +224,7 @@ class FreeplayState extends MusicBeatState
 			switch (songHighscore) {
 				case 'Dad-Battle': songHighscore = 'Dadbattle';
 				case 'Philly-Nice': songHighscore = 'Philly';
+				case 'Yuan-Time': songHighscore = 'Yuantime';
 			}
 			
 			trace(songLowercase);
@@ -241,19 +243,30 @@ class FreeplayState extends MusicBeatState
 	}
 
 	function changeDiff(change:Int = 0)
-	{
-		curDifficulty += change;
-
-		if (curDifficulty < 0)
-			curDifficulty = 2;
-		if (curDifficulty > 2)
-			curDifficulty = 0;
+		{
+			curDifficulty += change;
+	
+			if (curSelected == 3)
+				{
+					if (curDifficulty < 1)
+						curDifficulty = 1;
+					if (curDifficulty > 1)
+						curDifficulty = 1;
+				}
+				else
+					{
+						if (curDifficulty < 0)
+							curDifficulty = 2;
+						if (curDifficulty > 2)
+							curDifficulty = 0;
+					}
 
 		// adjusting the highscore song name to be compatible (changeDiff)
 		var songHighscore = StringTools.replace(songs[curSelected].songName, " ", "-");
 		switch (songHighscore) {
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
+			case 'Yuan-Time': songHighscore = 'Yuantime';
 		}
 		
 		#if !switch
@@ -265,9 +278,9 @@ class FreeplayState extends MusicBeatState
 			case 0:
 				diffText.text = "EASY";
 			case 1:
-				if (curSelected == 1)
+				if (curSelected == 3)
 					{
-						diffText.text = 'Fun With Yuan';
+						diffText.text = 'Yuan';
 					}
 					else
 						{
@@ -302,6 +315,7 @@ class FreeplayState extends MusicBeatState
 		switch (songHighscore) {
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
+			case 'Yuan-Time': songHighscore = 'Yuantime';
 		}
 
 		#if !switch
