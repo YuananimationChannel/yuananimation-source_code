@@ -21,6 +21,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
 		animation.add('bf-vibe', [0, 1], 0, false, isPlayer);
+		animation.add('bf-night', [0, 1], 0, false, isPlayer);
 		animation.add('spooky', [2, 3], 0, false, isPlayer);
 		animation.add('pico', [4, 5], 0, false, isPlayer);
 		animation.add('mom', [6, 7], 0, false, isPlayer);
@@ -32,12 +33,14 @@ class HealthIcon extends FlxSprite
 		animation.add('bf-red', [26, 27], 0, false, isPlayer);
 		animation.add('boss', [28, 29], 0, false, isPlayer);
 		animation.add('yuan-vibe', [24, 25], 0, false, isPlayer);
+		animation.add('yuan-night', [24, 25], 0, false, isPlayer);
 		animation.add('senpai', [22, 22], 0, false, isPlayer);
 		animation.add('senpai-angry', [22, 22], 0, false, isPlayer);
 		animation.add('spirit', [23, 23], 0, false, isPlayer);
 		animation.add('bf-old', [14, 15], 0, false, isPlayer);
 		animation.add('gf', [16], 0, false, isPlayer);
 		animation.add('gf-vibe', [16], 0, false, isPlayer);
+		animation.add('gf-night', [16], 0, false, isPlayer);
 		animation.add('gf-red', [16], 0, false, isPlayer);
 		animation.add('gf-wire', [16], 0, false, isPlayer);
 		animation.add('gf-christmas', [16], 0, false, isPlayer);

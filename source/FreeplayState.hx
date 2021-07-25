@@ -205,11 +205,11 @@ class FreeplayState extends MusicBeatState
 				onlyone = true;
 				changeDiff(2 - curDifficulty);
 			}
-		if (curSelected != 3 && goku == true)
+		if (curSelected != 3 && onlyone == true)
 			{
 				onlyone = false;
 				changeDiff(4);
-			
+			}
 
 		if (controls.LEFT_P)
 			changeDiff(-1);
@@ -228,7 +228,6 @@ class FreeplayState extends MusicBeatState
 			switch (songLowercase) {
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
-				case 'Yuan-Time': songLowercase = 'Yuantime';
 			}
 			// adjusting the highscore song name to be compatible (update)
 			// would read original scores if we didn't change packages
@@ -236,7 +235,6 @@ class FreeplayState extends MusicBeatState
 			switch (songHighscore) {
 				case 'Dad-Battle': songHighscore = 'Dadbattle';
 				case 'Philly-Nice': songHighscore = 'Philly';
-				case 'Yuan-Time': songHighscore = 'Yuantime';
 			}
 			
 			trace(songLowercase);
@@ -278,7 +276,6 @@ class FreeplayState extends MusicBeatState
 		switch (songHighscore) {
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
-			case 'Yuan-Time': songHighscore = 'Yuantime';
 		}
 		
 		#if !switch
@@ -327,7 +324,6 @@ class FreeplayState extends MusicBeatState
 		switch (songHighscore) {
 			case 'Dad-Battle': songHighscore = 'Dadbattle';
 			case 'Philly-Nice': songHighscore = 'Philly';
-			case 'Yuan-Time': songHighscore = 'Yuantime';
 		}
 
 		#if !switch

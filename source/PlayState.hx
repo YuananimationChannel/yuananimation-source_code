@@ -765,6 +765,16 @@ class PlayState extends MusicBeatState
 						wirebg.alpha = 0;
 						add(wirebg);
 				}
+				case 'yuannight':
+				{
+						defaultCamZoom = 0.8;
+						curStage = 'yuannight';
+						var bgnight:FlxSprite = new FlxSprite(-4.9, -1.7).loadGraphic(Paths.image('Night/BG_Night','shared'));
+						bgnight.antialiasing = true;
+						bgnight.scrollFactor.set(0.9, 0.9);
+						bgnight.active = false;
+						add(bgnight);
+				}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -809,6 +819,8 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-red';
 			case 'gf-wire':
 				gfVersion = 'gf-wire';
+			case 'gf-night':
+				gfVersion = 'gf-night';
 			default:
 				gfVersion = 'gf';
 		}
@@ -861,6 +873,10 @@ class PlayState extends MusicBeatState
 				dad.y = 318.4;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'yuan-vibe':
+				dad.x = 666.35;
+				dad.y = 318.4;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'yuan-night':
 				dad.x = 666.35;
 				dad.y = 318.4;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
@@ -930,6 +946,11 @@ class PlayState extends MusicBeatState
 				gfred.y = 350.45;
 				bfred.x = 1533.75;
 				bfred.y = 715.85;
+			case 'yuannight':
+				boyfriend.x = 1566.5;
+				boyfriend.y = 711.2;
+				gf.x = 989.15;
+				gf.y = 345.6;
 		}
 
 		add(gf);
@@ -1781,6 +1802,39 @@ class PlayState extends MusicBeatState
 							babyArrow.animation.addByPrefix('pressed', 'right press', 24, false);
 							babyArrow.animation.addByPrefix('confirm', 'right confirm', 24, false);
 						}
+				case 'yuannight':
+					babyArrow.frames = Paths.getSparrowAtlas('Night/NOTE_assets');
+					babyArrow.animation.addByPrefix('green', 'arrowUP');
+					babyArrow.animation.addByPrefix('blue', 'arrowDOWN');
+					babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
+					babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
+			
+					babyArrow.antialiasing = true;
+					babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
+			
+					switch (Math.abs(i))
+					{
+						case 0:
+							babyArrow.x += Note.swagWidth * 0;
+							babyArrow.animation.addByPrefix('static', 'arrowLEFT');
+							babyArrow.animation.addByPrefix('pressed', 'left press', 24, false);
+							babyArrow.animation.addByPrefix('confirm', 'left confirm', 24, false);
+						case 1:
+							babyArrow.x += Note.swagWidth * 1;
+							babyArrow.animation.addByPrefix('static', 'arrowDOWN');
+							babyArrow.animation.addByPrefix('pressed', 'down press', 24, false);
+							babyArrow.animation.addByPrefix('confirm', 'down confirm', 24, false);
+						case 2:
+							babyArrow.x += Note.swagWidth * 2;
+							babyArrow.animation.addByPrefix('static', 'arrowUP');
+							babyArrow.animation.addByPrefix('pressed', 'up press', 24, false);
+							babyArrow.animation.addByPrefix('confirm', 'up confirm', 24, false);
+						case 3:
+							babyArrow.x += Note.swagWidth * 3;
+							babyArrow.animation.addByPrefix('static', 'arrowRIGHT');
+							babyArrow.animation.addByPrefix('pressed', 'right press', 24, false);
+							babyArrow.animation.addByPrefix('confirm', 'right confirm', 24, false);
+						}						
 				default:
 					babyArrow.frames = Paths.getSparrowAtlas('NOTE_assets');
 					babyArrow.animation.addByPrefix('green', 'arrowUP');

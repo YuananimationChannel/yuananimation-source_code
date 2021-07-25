@@ -2,4 +2,5 @@ normal
 pixel
 yuannote
 yuaneve
+yuannight
 red
