@@ -2833,7 +2833,7 @@ class PlayState extends MusicBeatState
 					switch(SONG.song.toLowerCase()) //make it play when storyend - TaeYai
 					{
 						case "boss-fight":
-								FlxG.switchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new StoryMenuState()));
+								FlxG.switchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new Ending()));
 									if (accuracy > 10 && storyDifficulty != 0)
 									{
 										trace("Good save");

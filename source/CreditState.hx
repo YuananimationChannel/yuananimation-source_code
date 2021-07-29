@@ -47,7 +47,8 @@ class CreditState extends MusicBeatState
 			"peetagorad",
 			"TaeYai",
 			"Yuan animation Channel",
-			"Donate TO Funky Team"
+			"Donate To Funky Team",
+			"MyFuckinMess"
 
         ];
         var initStuff:Array<String> = [
@@ -61,14 +62,16 @@ class CreditState extends MusicBeatState
 			"3:youtube://youtube.com/channel/UCtIH-QZgyOO7eMKtdO0Uk5A",
 			"3:facebook://facebook.com/NgernYuAn",
 			"3:twitter://twitter.com/AnimationYuan",
-			"4:Kickstarter://kickstarter.com/projects/funkin/friday-night-funkin-the-full-ass-game"
+			"4:Kickstarter://kickstarter.com/projects/funkin/friday-night-funkin-the-full-ass-game",
+			"5:YouTube://www.youtube.com/watch?v=v1K4EAXe2oo&t=87s"
 		];
         labels = [
 			"Original Dev",
             "Music",
 			"Second Coder",
 			"Mod creator",
-			"Original Game"
+			"Original Game",
+			"Original Bonus Song"
         ];
 		
 		
