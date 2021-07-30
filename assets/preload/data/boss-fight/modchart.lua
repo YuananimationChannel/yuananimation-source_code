@@ -71,6 +71,14 @@ function update (elapsed)
 			setActorX(_G['defaultStrum'..i..'X'] - 100 * math.cos((currentBeat + i*5) * math.pi), i)
 		end
 	end
+	if swayingbiggest then
+		for i=0,3 do
+			setActorY(_G['defaultStrum'..i..'Y'] + 64 * math.cos((currentBeat + i*5) * math.pi),i)
+		end
+		for i=4,7 do
+			setActorY(_G['defaultStrum'..i..'Y'] - 64 * math.cos((currentBeat + i*5) * math.pi),i)
+		end
+	end
 end
 
 
@@ -131,7 +139,7 @@ function stepHit (step)
 	if step == 1600 then
 	zoom = false
 	camerahit2 = false
-	noteswap2 = true
+	swayingbiggest = true
 	end
 	if step == 1855 then
 	for i=0,7 do
