@@ -287,14 +287,7 @@ class FreeplayState extends MusicBeatState
 			case 0:
 				diffText.text = "EASY";
 			case 1:
-				if (curSelected == 3)
-					{
-						diffText.text = 'Have fun';
-					}
-					else
-						{
-							diffText.text = 'NORMAL';
-						}
+				diffText.text = 'NORMAL';
 			case 2:
 				diffText.text = "HARD";
 		}
