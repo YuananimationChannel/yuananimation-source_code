@@ -3,6 +3,7 @@ package;
 import Controls.KeyboardScheme;
 import flixel.FlxG;
 import flixel.FlxObject;
+import flixel.addons.display.FlxBackdrop;
 import flixel.FlxSprite;
 import flixel.effects.FlxFlicker;
 import flixel.graphics.frames.FlxAtlasFrames;
@@ -60,17 +61,29 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
+		/*var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
 		bg.scrollFactor.x = 0;
 		bg.scrollFactor.y = 0.10;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = true;
-		add(bg);
+		add(bg);*/
+
+		var bg:FlxBackdrop;
+		add(bg = new FlxBackdrop(Paths.image('menuBG')));
+		bg.velocity.set(-40, 0);
+
+		
+
+		var line:FlxSprite = new FlxSprite().loadGraphic(Paths.image('blackline'));
+		line.scrollFactor.set();
+		line.updateHitbox();
+		line.antialiasing = true;
+		add(line);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
-		add(camFollow);
+		//add(camFollow);
 
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.scrollFactor.x = 0;
@@ -91,7 +104,7 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-			var menuItem:FlxSprite = new FlxSprite(0, FlxG.height * 1.6);
+			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 160));
 			menuItem.frames = tex;
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
@@ -99,7 +112,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
-			menuItem.scrollFactor.set();
+			menuItem.scrollFactor.set(0, 0.15);
 			menuItem.antialiasing = true;
 			if (firstStart)
 				FlxTween.tween(menuItem,{y: 60 + (i * 160)},1 + (i * 0.25) ,{ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
@@ -216,6 +229,7 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.screenCenter(X);
+			spr.x += 300;
 		});
 	}
 	
@@ -256,7 +270,7 @@ class MainMenuState extends MusicBeatState
 			if (spr.ID == curSelected && finishedFunnyMove)
 			{
 				spr.animation.play('selected');
-				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y);
+				//camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y);
 			}
 
 			spr.updateHitbox();
