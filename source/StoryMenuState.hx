@@ -76,6 +76,7 @@ class StoryMenuState extends MusicBeatState
 	var sprDifficulty:FlxSprite;
 	var leftArrow:FlxSprite;
 	var rightArrow:FlxSprite;
+	var targetX:Int;
 
 	override function create()
 	{
@@ -130,8 +131,8 @@ class StoryMenuState extends MusicBeatState
 		for (i in 0...weekData.length)
 		{
 			var weekThing:MenuItem = new MenuItem(0, yellowBG.y + yellowBG.height + 10, i);
-			weekThing.y += ((weekThing.height + 20) * i);
-			weekThing.targetY = i;
+			weekThing.x += ((weekThing.height + 20) * i);
+			weekThing.targetX = i;
 			grpWeekText.add(weekThing);
 
 			weekThing.screenCenter(X);
@@ -230,12 +231,12 @@ class StoryMenuState extends MusicBeatState
 		{
 			if (!selectedWeek)
 			{
-				if (controls.UP_P)
+				if (controls.LEFT_P)
 				{
 					changeWeek(-1);
 				}
 
-				if (controls.DOWN_P)
+				if (controls.RIGHT_P)
 				{
 					changeWeek(1);
 				}
@@ -250,9 +251,9 @@ class StoryMenuState extends MusicBeatState
 				else
 					leftArrow.animation.play('idle');
 
-				if (controls.RIGHT_P)
+				if (controls.UP_P)
 					changeDifficulty(1);
-				if (controls.LEFT_P)
+				if (controls.DOWN_P)
 					changeDifficulty(-1);
 			}
 
@@ -376,11 +377,11 @@ class StoryMenuState extends MusicBeatState
 
 		for (item in grpWeekText.members)
 		{
-			item.targetY = bullShit - curWeek;
-			if (item.targetY == Std.int(0) && weekUnlocked[curWeek])
+			item.targetX = bullShit - curWeek;
+			if (item.targetX == Std.int(0) && weekUnlocked[curWeek])
 				item.alpha = 1;
 			else
-				item.alpha = 0.6;
+				item.alpha = 0;
 			bullShit++;
 		}
 

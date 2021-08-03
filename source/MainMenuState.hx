@@ -40,12 +40,19 @@ class MainMenuState extends MusicBeatState
 
 	public static var nightly:String = "";
 
+	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Checker'), 0.2, 0.2, true, true);
+
 	public static var kadeEngineVer:String = "1.5.1" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 	public static var finishedFunnyMove:Bool = false;
+	public static var prevCharacter:Int = 99;
+	var character:Character;
+	var bg:FlxSprite;
+	var targetY:Float;
+	var targetX:Int;
 
 	override function create()
 	{
@@ -70,9 +77,11 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);*/
 
-		var bg:FlxBackdrop;
-		add(bg = new FlxBackdrop(Paths.image('menuBG')));
-		bg.velocity.set(-40, 0);
+
+
+
+		
+		
 
 		
 
@@ -80,7 +89,63 @@ class MainMenuState extends MusicBeatState
 		line.scrollFactor.set();
 		line.updateHitbox();
 		line.antialiasing = true;
+
+
+		var random = FlxG.random.int(0,3);
+		if (random == prevCharacter) {
+			random++;
+			if (random > 3) 
+				random = 0;
+		}
+
+		switch (random) {
+			case 3:
+				character = new Character(-2000, 400, 'bf-wire');
+				bg = new FlxSprite(-89, -100).loadGraphic(Paths.image('WIREBG'));
+				bg.scrollFactor.set();
+				bg.updateHitbox();
+				bg.antialiasing = true;		
+				targetX = -40;
+			case 2:
+				character = new Character(-920, 180, 'yuan');
+				bg  = new FlxSprite(-89, -100).loadGraphic(Paths.image('menuBG'));
+				bg.scrollFactor.x = 0;
+				bg.scrollFactor.y = 0.10;
+				bg.setGraphicSize(Std.int(bg.width * 1.1));
+				bg.updateHitbox();
+				bg.screenCenter();
+				bg.antialiasing = true;				
+				targetX = 0;
+			case 1:
+				character = new Character(-10000, 150, 'boss');
+				bg  = new FlxSprite(-89, -100).loadGraphic(Paths.image('menuBG'));
+				bg.scrollFactor.x = 0;
+				bg.scrollFactor.y = 0.10;
+				bg.setGraphicSize(Std.int(bg.width * 1.1));
+				bg.updateHitbox();
+				bg.screenCenter();
+				bg.antialiasing = true;				
+				targetX = -100;
+			case 0:
+				character = new Character(-2000, 400, 'bf');
+				bg  = new FlxSprite(-89, -100).loadGraphic(Paths.image('menuBG'));
+				bg.scrollFactor.x = 0;
+				bg.scrollFactor.y = 0.10;
+				bg.setGraphicSize(Std.int(bg.width * 1.1));
+				bg.updateHitbox();
+				bg.screenCenter();
+				bg.antialiasing = true;				
+				targetX = -40;
+		}
+		prevCharacter = random;
+		character.debugMode = true;
+		character.scale.set(0.8, 0.8);
+		character.scrollFactor.set(0, 0);
+		add(bg);
+		add(checker);
 		add(line);
+		checker.scrollFactor.set(0, 0.07);
+		add(character);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		//add(camFollow);
@@ -99,6 +164,13 @@ class MainMenuState extends MusicBeatState
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
+
+		FlxTween.tween(character, {x: targetX}, 0.6, {
+			ease: FlxEase.quadIn,
+			startDelay:0.25,
+			onComplete: function(twn:FlxTween) {
+			}
+		});
 
 		var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
 
@@ -148,12 +220,22 @@ class MainMenuState extends MusicBeatState
 
 	var selectedSomethin:Bool = false;
 
+	override function beatHit()
+		{
+			super.beatHit();
+	
+			character.playAnim('idle', true);
+		}
+
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
+
+		checker.x -= 0.45;
+		checker.y -= 0.16;
 
 		if (!selectedSomethin)
 		{
@@ -187,8 +269,6 @@ class MainMenuState extends MusicBeatState
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 					
-					if (FlxG.save.data.flashing)
-						FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
 					menuItems.forEach(function(spr:FlxSprite)
 					{
@@ -204,25 +284,18 @@ class MainMenuState extends MusicBeatState
 						}
 						else
 						{
-							if (FlxG.save.data.flashing)
-							{
-								FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
-								{
-									goToState();
-								});
-							}
-							else
-							{
 								new FlxTimer().start(1, function(tmr:FlxTimer)
 								{
 									goToState();
 								});
-							}
+							
 						}
 					});
 				}
 			}
 		}
+
+
 
 		super.update(elapsed);
 
