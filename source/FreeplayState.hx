@@ -50,9 +50,9 @@ class FreeplayState extends MusicBeatState
 		if (_yuansave.data.weekUnlocked != null)
 			StoryMenuState.weekUnlocked = _yuansave.data.weekUnlocked;
 
-	    if (StoryMenuState.weekUnlocked[8])
+	    if (StoryMenuState.weekUnlocked[2])
 		{
-			songs.push(new SongMetadata("beebaaboo", 8, "yuan"));
+			songs.push(new SongMetadata("beebaaboo", 2, "yuan"));
 		}
 
 		/* 
@@ -219,6 +219,7 @@ class FreeplayState extends MusicBeatState
 		if (controls.BACK)
 		{
 			FlxG.switchState(new MainMenuState());
+			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		}
 
 		if (accepted)

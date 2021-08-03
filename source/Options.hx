@@ -157,7 +157,7 @@ class GhostTapOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.ghost ? "Ghost Tapping" : "No Ghost Tapping";
+		return FlxG.save.data.ghost ? "Ghost Tapping" : "Ghost Tapping";
 	}
 }
 
@@ -258,6 +258,68 @@ class FlashingLightsOption extends Option
 	private override function updateDisplay():String
 	{
 		return "Flashing Lights " + (!FlxG.save.data.flashing ? "off" : "on");
+	}
+}
+
+class HITSOUND extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.usehitsound = !FlxG.save.data.usehitsound;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Use HitSound: " + (!FlxG.save.data.usehitsound ? "off" : "on");
+	}
+}
+
+class DUB extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.dub = !FlxG.save.data.dub;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "SOUND: " + (!FlxG.save.data.dub ? "DUB ENGLISH" : "DUB THAILAND");
+	}
+}
+class LANGUAGE extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.eng = !FlxG.save.data.eng;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "LANGUAGE: " + (!FlxG.save.data.eng ? "THAI" : "ENGLISH");
 	}
 }
 

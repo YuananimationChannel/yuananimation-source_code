@@ -1082,7 +1082,15 @@ class PlayState extends MusicBeatState
 		scoreTxt = new FlxText(FlxG.width / 2 - 235, healthBarBG.y + 50, 0, "", 20);
 		if (!FlxG.save.data.accuracyDisplay)
 			scoreTxt.x = healthBarBG.x + healthBarBG.width / 2;
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		if (!FlxG.save.data.eng)
+			{
+				scoreTxt.setFormat(Paths.font("supermarket.otf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+			}
+		if (FlxG.save.data.eng)
+			{
+				scoreTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+			}
+		
 		scoreTxt.scrollFactor.set();
 		if (offsetTesting)
 			scoreTxt.x += 300;
@@ -1097,8 +1105,17 @@ class PlayState extends MusicBeatState
 			add(replayTxt);
 		}
 		// Literally copy-paste of the above, fu
-		botPlayState = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (FlxG.save.data.downscroll ? 100 : -100), 0, "BOTPLAY", 20);
-		botPlayState.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		
+		if (!FlxG.save.data.eng)
+			{
+				botPlayState = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (FlxG.save.data.downscroll ? 100 : -100), 0, "บอทเล่น", 20);
+				botPlayState.setFormat(Paths.font("supermarket.otf"), 42, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+			}
+		if (FlxG.save.data.eng)
+			{
+				botPlayState = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (FlxG.save.data.downscroll ? 100 : -100), 0, "BOTPLAY", 20);
+				botPlayState.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+			}
 		botPlayState.scrollFactor.set();
 		
 		if(FlxG.save.data.botplay && !loadRep) add(botPlayState);
@@ -2091,8 +2108,16 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore,songScoreDef,nps,maxNPS,accuracy);
-		if (!FlxG.save.data.accuracyDisplay)
-			scoreTxt.text = "Score: " + songScore;
+		if (!FlxG.save.data.accuracyDisplay && !FlxG.save.data.eng)
+			{
+				scoreTxt.text = "คะแนน: " + songScore;
+			}
+			
+		else if (!FlxG.save.data.accuracyDisplay && FlxG.save.data.eng)
+			{
+				scoreTxt.text = "Score: " + songScore;
+			}
+		
 
 		if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
 		{
@@ -2837,7 +2862,7 @@ class PlayState extends MusicBeatState
 									if (accuracy > 10 && storyDifficulty != 0)
 									{
 										trace("Good save");
-										StoryMenuState.weekUnlocked[8] = true;
+										StoryMenuState.weekUnlocked[2] = true;
 										_yuansave.data.weekUnlocked = StoryMenuState.weekUnlocked;
 										_yuansave.flush();
 										trace("END!");
@@ -3028,6 +3053,10 @@ class PlayState extends MusicBeatState
 					health -= 0.2;
 					ss = false;
 					shits++;
+					if (FlxG.save.data.usehitsound)
+						{
+							FlxG.sound.play(Paths.sound('hotsound', 'shared'), 2);
+						}
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 0.25;
 				case 'bad':
@@ -3036,6 +3065,10 @@ class PlayState extends MusicBeatState
 					health -= 0.06;
 					ss = false;
 					bads++;
+					if (FlxG.save.data.usehitsound)
+						{
+							FlxG.sound.play(Paths.sound('hotsound', 'shared'), 2);
+						}
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 0.50;
 				case 'good':
@@ -3045,6 +3078,10 @@ class PlayState extends MusicBeatState
 					goods++;
 					if (health < 2)
 						health += 0.04;
+					if (FlxG.save.data.usehitsound)
+						{
+							FlxG.sound.play(Paths.sound('hotsound', 'shared'), 2);
+						}
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 0.75;
 
@@ -3059,6 +3096,11 @@ class PlayState extends MusicBeatState
 					}
 					if (health < 2)
 						health += 0.1;
+					if (FlxG.save.data.usehitsound)
+						{
+							FlxG.sound.play(Paths.sound('hotsound', 'shared'), 2);
+						}
+					
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 1;
 					    sicks++;

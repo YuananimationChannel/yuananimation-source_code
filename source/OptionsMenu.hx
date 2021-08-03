@@ -27,7 +27,7 @@ class OptionsMenu extends MusicBeatState
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
 			new DownscrollOption("Change the layout of the strumline."),
-			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
+			new GhostTapOption("JUST TURN IT ON IF YOU DONT WANT YOUR GAME CRUSH"),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),
@@ -59,6 +59,18 @@ class OptionsMenu extends MusicBeatState
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
 			new BotPlay("Showcase your charts and mods with autoplay.")
+		]),
+		new OptionCategory("HITSOUND", 
+		[
+			new HITSOUND("When you tap the note it will play the sound")
+		]),
+		new OptionCategory("CUTSCENE", 
+		[
+			new DUB("DUB")
+		]),
+		new OptionCategory("LANGUAGE", 
+		[
+			new LANGUAGE("Choose LANGUAGE")
 		])
 		
 	];

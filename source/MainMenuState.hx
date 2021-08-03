@@ -68,23 +68,6 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		/*var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
-		bg.scrollFactor.x = 0;
-		bg.scrollFactor.y = 0.10;
-		bg.setGraphicSize(Std.int(bg.width * 1.1));
-		bg.updateHitbox();
-		bg.screenCenter();
-		bg.antialiasing = true;
-		add(bg);*/
-
-
-
-
-		
-		
-
-		
-
 		var line:FlxSprite = new FlxSprite().loadGraphic(Paths.image('blackline'));
 		line.scrollFactor.set();
 		line.updateHitbox();
@@ -98,7 +81,8 @@ class MainMenuState extends MusicBeatState
 				random = 0;
 		}
 
-		switch (random) {
+		switch (random) 
+		{
 			case 3:
 				character = new Character(-2000, 400, 'bf-wire');
 				bg = new FlxSprite(-89, -100).loadGraphic(Paths.image('WIREBG'));
@@ -117,17 +101,17 @@ class MainMenuState extends MusicBeatState
 				bg.antialiasing = true;				
 				targetX = 0;
 			case 1:
-				character = new Character(-10000, 150, 'boss');
-				bg  = new FlxSprite(-89, -100).loadGraphic(Paths.image('menuBG'));
+				character = new Character(-2000, 150, 'boss');
+				bg  = new FlxSprite(-89, -100).loadGraphic(Paths.image('redbg'));
 				bg.scrollFactor.x = 0;
 				bg.scrollFactor.y = 0.10;
 				bg.setGraphicSize(Std.int(bg.width * 1.1));
 				bg.updateHitbox();
 				bg.screenCenter();
 				bg.antialiasing = true;				
-				targetX = -100;
+				targetX = -300;
 			case 0:
-				character = new Character(-2000, 400, 'bf');
+				character = new Character(-2000, 300, 'bf');
 				bg  = new FlxSprite(-89, -100).loadGraphic(Paths.image('menuBG'));
 				bg.scrollFactor.x = 0;
 				bg.scrollFactor.y = 0.10;

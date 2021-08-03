@@ -22,6 +22,7 @@ class VideoState extends MusicBeatState
 	public var leSource:String = "";
 	public var transClass:FlxState;
 	public var txt:FlxText;
+	public var skipText:FlxText;
 	public var fuckingVolume:Float = 1;
 	public var notDone:Bool = true;
 	public var vidSound:FlxSound;
@@ -32,6 +33,9 @@ class VideoState extends MusicBeatState
 	public var defaultText:String = "";
 	public var doShit:Bool = false;
 	public var pauseText:String = "Press P To Pause/Unpause";
+	public var pauseTextTH:String = "กด P เพื่อ หยุด/เล่นต่อ";
+	public var videoSprite:FlxSprite = new FlxSprite();
+	var ishit = 0;
 
 	public function new(source:String, toTrans:FlxState)
 	{
@@ -60,6 +64,22 @@ class VideoState extends MusicBeatState
 		#end
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
+		if (FlxG.save.data.eng)
+			{
+				skipText = new FlxText(0, 0, 0, "Press ENTER to Skip", 16);
+				skipText.setBorderStyle(FlxTextBorderStyle.OUTLINE,0xFF000000,2,1);
+	        	skipText.y = 720 - skipText.height;
+			}
+		else if (!FlxG.save.data.eng)
+			{
+				skipText = new FlxText(0, 0, 0, "กด ENTER เพื่อข้าม", 42);
+				skipText.setBorderStyle(FlxTextBorderStyle.OUTLINE,0xFF000000,20,1);
+		        skipText.y = 720 - skipText.height;
+				skipText.setFormat("supermarket", 16);
+			}
+		
+		//supermarket
+		
 		var html5Text:String = "You Are Not Using HTML5...\nThe Video Didnt Load!";
 		if (isHTML)
 		{
@@ -69,9 +89,19 @@ class VideoState extends MusicBeatState
 		txt = new FlxText(0, 0, FlxG.width,
 			defaultText,
 			32);
-		txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+		if (FlxG.save.data.eng)
+			{
+				txt.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+			}
+		else if (!FlxG.save.data.eng)
+			{
+				txt.setFormat("supermarket", 32, FlxColor.WHITE, CENTER);
+			}
 		txt.screenCenter();
 		add(txt);
+		add(videoSprite);
+		add(skipText);
+		
 
 		if (GlobalVideo.isWebm)
 		{
@@ -113,11 +143,17 @@ class VideoState extends MusicBeatState
 				doShit = true;
 			//}, 1);
 		//}
+		var data = Main.webmHandle.webm.bitmapData;
+		videoSprite.loadGraphic(data);
+		FlxG.camera.flash(FlxColor.BLACK, 0.5);
+		
 	}
 	
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		if (ishit < 8) pauseShit();
+		ishit++;
 		
 		if (useSound)
 		{
@@ -171,16 +207,7 @@ class VideoState extends MusicBeatState
 		
 		if (FlxG.keys.justPressed.P)
 		{
-			txt.text = pauseText;
-			trace("PRESSED PAUSE");
-			GlobalVideo.get().togglePause();
-			if (GlobalVideo.get().paused)
-			{
-				GlobalVideo.get().alpha();
-			} else {
-				GlobalVideo.get().unalpha();
-				txt.text = defaultText;
-			}
+			pauseShit();
 		}
 		
 		if (controls.ACCEPT || GlobalVideo.get().ended || GlobalVideo.get().stopped)
@@ -209,4 +236,27 @@ class VideoState extends MusicBeatState
 		GlobalVideo.get().stopped = false;
 		GlobalVideo.get().ended = false;
 	}
+	public function pauseShit() 
+		{
+			
+			if (FlxG.save.data.eng)
+				{
+					txt.text = pauseText;
+				}
+			else if (!FlxG.save.data.eng)
+				{
+					txt.text = pauseTextTH;
+				}
+				trace("PRESSED PAUSE");
+				GlobalVideo.get().togglePause();
+				if (GlobalVideo.get().paused)
+				{
+					videoSprite.alpha = 0.5;
+					GlobalVideo.get().alpha();
+				} else {
+					videoSprite.alpha = 1;
+					GlobalVideo.get().unalpha();
+					txt.text = defaultText;
+				}
+		}
 }
