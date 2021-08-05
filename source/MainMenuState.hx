@@ -156,12 +156,24 @@ class MainMenuState extends MusicBeatState
 			}
 		});
 
-		var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
+				var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
+			
+				var tex2 = Paths.getSparrowAtlas('Menu_Thai');
+			
+		
 
 		for (i in 0...optionShit.length)
 		{
 			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 160));
-			menuItem.frames = tex;
+			if(FlxG.save.data.eng)
+				{
+					menuItem.frames = tex;
+				}
+			else if(!FlxG.save.data.eng)
+				{
+					menuItem.frames = tex2;
+					menuItem.scale.set(0.5, 0.5);
+				}
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
