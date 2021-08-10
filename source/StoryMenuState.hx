@@ -296,12 +296,12 @@ class StoryMenuState extends MusicBeatState
 						if (FlxG.save.data.dub)
 							{
 								var video:VideoHandlerMP4 = new VideoHandlerMP4();
-								video.playMP4(Paths.video('vid'), new PlayState(), false, false, false);
+								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
 							}
 						else if (!FlxG.save.data.dub)
 							{
 								var video:VideoHandlerMP4 = new VideoHandlerMP4();
-								video.playMP4(Paths.video('vid'), new PlayState(), false, false, false);
+								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
 							}
 					}
 					else

@@ -135,7 +135,8 @@ class VideoHandlerMP4
 
 		if (finishCallback != null)
 		{
-			FlxG.switchState(finishCallback);
+			LoadingState.loadAndSwitchState(finishCallback);
+			FlxG.autoPause = true;
 		}
 	}
 	#end
@@ -169,9 +170,11 @@ class VideoHandlerMP4
 
 		if (finishCallback != null)
 		{
-			FlxG.switchState(finishCallback);
+			LoadingState.loadAndSwitchState(finishCallback);
+			FlxG.autoPause = true;
 		}
 		else
-			FlxG.switchState(new MainMenuState());
+			LoadingState.loadAndSwitchState(new MainMenuState());
+			FlxG.autoPause = true;
 	}
 }
