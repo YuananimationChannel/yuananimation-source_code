@@ -16,11 +16,6 @@ senpai
 senpai-angry
 spirit
 yuan
-bf-vibe
-gf-vibe
-bf-red
-gf-red
 boss
-yuan-night
-bf-night
-gf-night
+jimmy
+miniyuan

@@ -133,6 +133,23 @@ class Character extends FlxSprite
 
                 playAnim('idle1');
 
+			case 'taeshoot':
+				tex = Paths.getSparrowAtlas('characters/Tae_Shoot','shared');
+				frames = tex;
+				animation.addByPrefix('shoot1', 'Pico shoot 1', 24, false); //Fuck why offset Auto Change
+                animation.addByPrefix('shoot2', 'Pico shoot 2', 24, false);
+				animation.addByPrefix('shoot3', 'Pico shoot 3', 24, false);
+				animation.addByPrefix('shoot4', 'Pico shoot 4', 24, false);
+
+				addOffset("shoot1");
+                addOffset("shoot2", 0, -127);
+				addOffset('shoot3', 436, -20);
+				addOffset('shoot4', 411, -67);
+
+                loadMappedAnims();
+
+                playAnim('shoot1');
+
 			case 'gf-wire':
 				tex = Paths.getSparrowAtlas('characters/gfwire','shared');
 				frames = tex;
@@ -340,6 +357,23 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+
+			case 'jimmy':
+				tex = Paths.getSparrowAtlas('characters/Jimmy_asset', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Jimmy Idle', 24);
+				animation.addByPrefix('singUP', 'Jimmy Note Up', 24);
+				animation.addByPrefix('singLEFT', 'Jimmy Note Left', 24);
+				animation.addByPrefix('singRIGHT', 'Jimmy Note Right', 24);
+				animation.addByPrefix('singDOWN', 'Jimmy Note Down', 24);
+	
+				addOffset('idle');
+				addOffset("singUP", 0, 17);
+				addOffset("singRIGHT", -13, -8);
+				addOffset("singLEFT", 8, -4);
+				addOffset("singDOWN", -5, -20);
+	
+				playAnim('idle');
 
 			case 'bf-night':
 				var tex = Paths.getSparrowAtlas('characters/BoyFriend_Night','shared');
@@ -551,13 +585,55 @@ class Character extends FlxSprite
 			case 'bf':
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
 				frames = tex;
+	
+				trace(tex.frames.length);
+	
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+	
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+	
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+	
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				addOffset("hey", 7, 4);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -4);
+	
+				playAnim('idle');
+	
+				flipX = true;				
+
+			case 'miniyuan':
+				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND2', 'shared');
+				frames = tex;
 
 				trace(tex.frames.length);
 
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE LEFT0', 24, false);
 				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
 				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
 				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
@@ -860,6 +936,22 @@ class Character extends FlxSprite
                     playAnim(animation.curAnim.name, false, false, animation.curAnim.frames.length - 3);
 					dance();
                 }
+			case 'taeshoot':
+                if (animationNotes.length > 0 && Conductor.songPosition > animationNotes[0][0])
+                {
+                    var shootAnim = 1;
+                    if (animationNotes[0][1] >= 2)
+                        shootAnim = 3;
+
+                    shootAnim += FlxG.random.int(0, 1);
+                    playAnim("shoot" + shootAnim, true);
+                    animationNotes.shift();
+                }
+                if (animation.curAnim != null && animation.curAnim.finished)
+                {
+                    playAnim(animation.curAnim.name, false, false, animation.curAnim.frames.length - 3);
+					dance();
+                }
 		}
 
 		super.update(elapsed);
@@ -967,6 +1059,8 @@ class Character extends FlxSprite
 					else
 						playAnim('danceLeft');
 				case 'gf-red':
+					trace('SHOOT THEM ALL');
+				case 'taeshoot':
 					trace('SHOOT THEM ALL');
 				default:
 					playAnim('idle');

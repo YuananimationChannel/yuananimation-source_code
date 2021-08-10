@@ -775,6 +775,16 @@ class PlayState extends MusicBeatState
 						bgnight.active = false;
 						add(bgnight);
 				}
+				case 'jimmystage':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'jimmystage';
+						var bgjim:FlxSprite = new FlxSprite(-32, -19.95).loadGraphic(Paths.image('Jimmy/Scene','shared'));
+						bgjim.antialiasing = true;
+						bgjim.scrollFactor.set(0.9, 0.9);
+						bgjim.active = false;
+						add(bgjim);
+				}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -817,6 +827,8 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-vibe';
 			case 'gf-red':
 				gfVersion = 'gf-red';
+			case 'taeshoot':
+				gfVersion = 'taeshoot';
 			case 'gf-wire':
 				gfVersion = 'gf-wire';
 			case 'gf-night':
@@ -883,6 +895,10 @@ class PlayState extends MusicBeatState
 			case 'boss':
 				dad.x = 6.75;
 				dad.y = 120.35;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'jimmy':
+				dad.x = 626.45;
+				dad.y = 395.05;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
 
@@ -951,6 +967,11 @@ class PlayState extends MusicBeatState
 				boyfriend.y = 711.2;
 				gf.x = 989.15;
 				gf.y = 345.6;
+			case 'jimmystage':
+				boyfriend.x = 1803.9;
+				boyfriend.y = 768.05;
+				gf.x = 933.15;
+				gf.y = 221.7;
 		}
 
 		add(gf);

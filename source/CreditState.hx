@@ -67,7 +67,7 @@ class CreditState extends MusicBeatState
 		];
         labels = [
 			"Original Dev",
-            "Music",
+            "Music-Chart",
 			"Second Coder",
 			"Mod creator",
 			"Original Game",
