@@ -2858,7 +2858,8 @@ class PlayState extends MusicBeatState
 					switch(SONG.song.toLowerCase()) //make it play when storyend - TaeYai
 					{
 						case "boss-fight":
-								FlxG.switchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new Ending()));
+								var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
+								video.playMP4(Paths.video('unused cutscene'), new Ending(), false, false, false);
 									if (accuracy > 10 && storyDifficulty != 0)
 									{
 										trace("Good save");
@@ -2945,9 +2946,11 @@ class PlayState extends MusicBeatState
 					switch(SONG.song.toLowerCase())
                     {
 					    case 'evening':
-				            LoadingState.loadAndSwitchState(new VideoState("assets/videos/eveningCutscene.webm",new PlayState()));
+				            var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
+								video.playMP4(Paths.video('unused cutscene'), new Ending(), false, false, false);
 						case 'boss-fight':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutscene.webm",new PlayState()));
+							var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
+								video.playMP4(Paths.video('unused cutscene'), new Ending(), false, false, false);
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
