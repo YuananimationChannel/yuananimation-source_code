@@ -2947,10 +2947,10 @@ class PlayState extends MusicBeatState
                     {
 					    case 'evening':
 				            var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('unused cutscene'), new Ending(), false, false, false);
+								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
 						case 'boss-fight':
 							var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('unused cutscene'), new Ending(), false, false, false);
+								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
