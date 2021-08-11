@@ -295,18 +295,20 @@ class StoryMenuState extends MusicBeatState
 					{
 						if (FlxG.save.data.dub)
 							{
-								LoadingState.loadAndSwitchState(new VideoState("assets/videos/yuantimeCutscene.webm",new PlayState()));
+								var video:VideoHandlerMP4 = new VideoHandlerMP4();
+								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
 							}
 						else if (!FlxG.save.data.dub)
 							{
-								LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new PlayState()));
+								var video:VideoHandlerMP4 = new VideoHandlerMP4();
+								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false); //just change the name in ' '
 							}
 					}
 					else
 					{
 						LoadingState.loadAndSwitchState(new PlayState(), true);
 					}
-				LoadingState.loadAndSwitchState(new PlayState(), true);
+				//LoadingState.loadAndSwitchState(new PlayState(), true);
 			});
 			
 		}
