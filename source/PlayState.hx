@@ -2880,7 +2880,7 @@ class PlayState extends MusicBeatState
 					{
 						case "boss-fight":
 								var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('unused cutscene'), new Ending(), false, false, false);
+								video.playMP4(Paths.video('bossfightCutsceneEnd'), new Ending(), false, false, false);
 									if (accuracy > 10 && storyDifficulty != 0)
 									{
 										trace("Good save");
@@ -2968,10 +2968,10 @@ class PlayState extends MusicBeatState
                     {
 					    case 'evening':
 				            var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
+								video.playMP4(Paths.video('eveningCutscene'), new PlayState(), false, false, false);
 						case 'boss-fight':
 							var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('unused cutscene'), new PlayState(), false, false, false);
+								video.playMP4(Paths.video('bossfightCutscene'), new PlayState(), false, false, false);
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
