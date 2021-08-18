@@ -29,6 +29,10 @@ class VideoHandlerMP4
 		{
 			FlxG.sound.music.stop();
 		}
+		if (FlxG.sound.vocal != null)
+			{
+				FlxG.sound.vocal.stop();
+			}
 	}
 
 	public function playWebMP4(videoPath:String, callback:FlxState)
@@ -58,6 +62,10 @@ class VideoHandlerMP4
 		{
 			FlxG.sound.music.stop();
 		}
+		if (FlxG.sound.vocal != null)
+			{
+				FlxG.sound.vocal.stop();
+			}
 
 		finishCallback = callback;
 
