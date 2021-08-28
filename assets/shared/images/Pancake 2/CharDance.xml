@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="CharDance.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CharDance0000" x="0" y="0" width="2355" height="902" frameX="0" frameY="-18" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0001" x="0" y="0" width="2355" height="902" frameX="0" frameY="-18" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0002" x="2395" y="0" width="2350" height="908" frameX="-3" frameY="-12" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0003" x="2395" y="0" width="2350" height="908" frameX="-3" frameY="-12" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0004" x="4785" y="0" width="2353" height="915" frameX="-6" frameY="-6" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0005" x="0" y="955" width="2353" height="915" frameX="-6" frameY="-6" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0006" x="2393" y="955" width="2356" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0007" x="4789" y="955" width="2356" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0008" x="0" y="1916" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0009" x="0" y="1916" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0010" x="0" y="1916" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0011" x="0" y="1916" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0012" x="0" y="1916" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0013" x="0" y="1916" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+</TextureAtlas>

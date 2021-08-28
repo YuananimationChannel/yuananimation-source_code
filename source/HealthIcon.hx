@@ -17,7 +17,9 @@ class HealthIcon extends FlxSprite
 
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
-		animation.add('miniyuan', [0, 1], 0, false, isPlayer);
+		animation.add('miniyuan', [38, 39], 0, false, isPlayer);
+		animation.add('miniyuansmile', [38, 39], 0, false, isPlayer);
+		animation.add('miniyuanmad', [36, 37], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
@@ -26,13 +28,23 @@ class HealthIcon extends FlxSprite
 		animation.add('spooky', [2, 3], 0, false, isPlayer);
 		animation.add('pico', [4, 5], 0, false, isPlayer);
 		animation.add('taeshoot', [4, 5], 0, false, isPlayer);
+		animation.add('taeworries', [4, 5], 0, false, isPlayer);
 		animation.add('mom', [6, 7], 0, false, isPlayer);
 		animation.add('mom-car', [6, 7], 0, false, isPlayer);
 		animation.add('tankman', [8, 9], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
+		animation.add('pancake-evil', [32, 33], 0, false, isPlayer);
+		animation.add('pancake-sad', [34, 35], 0, false, isPlayer);
 		animation.add('dad', [12, 13], 0, false, isPlayer);
+		animation.add('boat', [40, 41], 0, false, isPlayer);
+		animation.add('cat', [44, 45], 0, false, isPlayer);
+		animation.add('bank', [46, 47], 0, false, isPlayer);
+		animation.add('almondbon', [48, 49], 0, false, isPlayer);
 		animation.add('yuan', [24, 25], 0, false, isPlayer);
 		animation.add('bf-red', [26, 27], 0, false, isPlayer);
+		animation.add('bfyuan', [26, 27], 0, false, isPlayer);
+		animation.add('bfyuan2', [26, 27], 0, false, isPlayer);
+		animation.add('bfyuanboth', [26, 27], 0, false, isPlayer);
 		animation.add('boss', [28, 29], 0, false, isPlayer);
 		animation.add('yuan-vibe', [24, 25], 0, false, isPlayer);
 		animation.add('yuan-night', [24, 25], 0, false, isPlayer);
@@ -51,6 +63,7 @@ class HealthIcon extends FlxSprite
 		animation.add('monster', [19, 20], 0, false, isPlayer);
 		animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
 		animation.add('jimmy', [30, 31], 0, false, isPlayer);
+		animation.add('tae', [42, 43], 0, false, isPlayer);
 		animation.play(char);
 
 		switch(char)

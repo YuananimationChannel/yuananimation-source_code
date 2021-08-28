@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="CharDanceTae.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CharDance No Tae0000" x="0" y="0" width="2300" height="903" frameX="0" frameY="-18" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0001" x="0" y="0" width="2300" height="903" frameX="0" frameY="-18" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0002" x="2340" y="0" width="2296" height="909" frameX="-3" frameY="-12" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0003" x="2340" y="0" width="2296" height="909" frameX="-3" frameY="-12" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0004" x="4676" y="0" width="2292" height="915" frameX="-6" frameY="-6" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0005" x="0" y="955" width="2292" height="915" frameX="-6" frameY="-6" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0006" x="2332" y="955" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0007" x="4659" y="955" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0008" x="0" y="1916" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0009" x="0" y="1916" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0010" x="0" y="1916" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0011" x="0" y="1916" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0012" x="0" y="1916" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+	<SubTexture name="CharDance No Tae0013" x="0" y="1916" width="2287" height="921" frameX="-10" frameY="0" frameWidth="2300" frameHeight="921"/>
+</TextureAtlas>

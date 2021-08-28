@@ -28,23 +28,27 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Yuan Time', 'Evening', 'Boss Fight']
+		['Yuan Time', 'Evening', 'Boss Fight'],
+		['The Jimmy', 'Lost Control', 'Memorie']
 	];
 	var curDifficulty:Int = 2;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, false];
+	public static var weekUnlocked:Array<Bool> = [true, true, true];
 
 	var background:Array<String> = [
 		'gfandbf',
-		'yuan-chapter'
+		'yuan-chapter',
+        'yuan-chapter2'
 	];
 
 	var weekNames:Array<String> = [
 		"tutorial",
-		"Chapter-1"
+		"Chapter-1",
+		"Chapter-2"
 	];
 
 	var weekColors:Array<String> = [
+		"Brown",
 		"Brown",
 		"Brown"
 	];

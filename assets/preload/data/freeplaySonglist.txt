@@ -20,4 +20,7 @@ Thorns:spirit:6
 Yuan Time:yuan:7
 Evening:yuan:7
 Boss Fight:boss:7
+The Jimmy:jimmy:8
+Lost Control:pancake-evil:8
+Memorie:pancake-sad:8
 

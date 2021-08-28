@@ -81,6 +81,8 @@ class PlayState extends MusicBeatState
 	public static var bads:Int = 0;
 	public static var goods:Int = 0;
 	public static var sicks:Int = 0;
+	var camMovement:Float = 0.09;
+	public var black:FlxSprite = new FlxSprite(-4.9, -1.7);
 
 	public static var songPosBG:FlxSprite;
 	public static var songPosBar:FlxBar;
@@ -172,12 +174,25 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
+	var gfBoppers:FlxSprite;
+	var PicoBoppers:FlxSprite;
+	var gfWorriesBoppers:FlxSprite;
+	var PicoWorriesBoppers:FlxSprite;
+	var bfWorriesBoppers:FlxSprite;	
+	var charBoppers:FlxSprite;	
+	var charBoppers2:FlxSprite;	
+	var charBoppers3:FlxSprite;	
+	var charBoppers4:FlxSprite;	
+	var charBoppers5:FlxSprite;	
+	var charBoppers6:FlxSprite;	
+	var charBoppers7:FlxSprite;	
 	var bossred:Character;
 	var gfred:Character;
 	var bfred:Boyfriend;  
-	var Wired:Bool = false; //they glow lol
+	var Wired:Bool = false;
 	var wirebg:FlxSprite; // why the fuck is city look like that -TaeYai
 	var bgred:FlxSprite; //OMG bf and yuan has glow
+	var blackScreen:FlxSprite;
 
 	var fc:Bool = true;
 
@@ -749,6 +764,7 @@ class PlayState extends MusicBeatState
 						bgred.scrollFactor.set(0.9, 0.9);
 						bgred.active = false;
 						add(bgred);
+
 						//What? It wire Cool right? -TaeYai
 						bfred = new Boyfriend(1533.75, 715.85, 'bf-wire');
 						bossred = new Character(6.75, 120.35,'boss-wire');
@@ -764,6 +780,14 @@ class PlayState extends MusicBeatState
 						wirebg.active = false;
 						wirebg.alpha = 0;
 						add(wirebg);
+						//Dark bg
+						var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+						blackScreen.alpha = 0;
+						add(blackScreen);
+
+						black.loadGraphic(Paths.image('Red/BlackFade','shared'));
+						black.active = false;
+						black.alpha = 0;
 				}
 				case 'yuannight':
 				{
@@ -777,13 +801,230 @@ class PlayState extends MusicBeatState
 				}
 				case 'jimmystage':
 				{
-						defaultCamZoom = 0.9;
+						defaultCamZoom = 0.8;
 						curStage = 'jimmystage';
+
+						var images = [];
+						var xml = [];
+			
+						trace("caching images...");
+			
+						for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
+						{
+							if (!i.endsWith(".png"))
+								continue;
+							images.push(i);
+			
+							if (!i.endsWith(".xml"))
+								continue;
+							xml.push(i);
+						}
+						for (i in images)
+							{
+								var replaced = i.replace(".png","");
+								FlxG.bitmap.add(Paths.image("characters/" + replaced,"shared"));
+								trace("cached " + replaced);
+							}
+					
+						for (i in xml)
+							{
+								var replaced = i.replace(".xml","");
+								FlxG.bitmap.add(Paths.image("characters/" + replaced,"shared"));
+							} 
+
 						var bgjim:FlxSprite = new FlxSprite(-32, -19.95).loadGraphic(Paths.image('Jimmy/Scene','shared'));
 						bgjim.antialiasing = true;
 						bgjim.scrollFactor.set(0.9, 0.9);
 						bgjim.active = false;
 						add(bgjim);
+
+						gfBoppers = new FlxSprite(1480.65, 525.25);
+						gfBoppers.frames = Paths.getSparrowAtlas('Jimmy/gfDance','shared');
+						gfBoppers.animation.addByPrefix('bop', 'gfDance', 24, false);
+						gfBoppers.antialiasing = true;
+						gfBoppers.scrollFactor.set(0.9, 0.9);
+						gfBoppers.setGraphicSize(Std.int(gfBoppers.width * 1));
+						gfBoppers.updateHitbox();
+						if(FlxG.save.data.distractions){
+							add(gfBoppers);
+						}
+
+						PicoBoppers = new FlxSprite(1725.1, 579.15);
+						PicoBoppers.frames = Paths.getSparrowAtlas('Jimmy/picoDance','shared');
+						PicoBoppers.animation.addByPrefix('bop', 'Pico Idle Dance', 24, false);
+						PicoBoppers.antialiasing = true;
+						PicoBoppers.scrollFactor.set(0.9, 0.9);
+						PicoBoppers.setGraphicSize(Std.int(PicoBoppers.width * 1));
+						PicoBoppers.updateHitbox();
+						if(FlxG.save.data.distractions){
+							add(PicoBoppers);
+						}
+				}
+				case 'pancakestage':
+				{
+						defaultCamZoom = 0.8;
+						curStage = 'pancakestage';
+						var bgpan:FlxSprite = new FlxSprite(-32, -19.95).loadGraphic(Paths.image('Pancake/pancake','shared'));
+						bgpan.antialiasing = true;
+						bgpan.scrollFactor.set(0.9, 0.9);
+						bgpan.active = false;
+						add(bgpan);
+
+						gfWorriesBoppers = new FlxSprite(1480.65, 525.25);
+						gfWorriesBoppers.frames = Paths.getSparrowAtlas('Pancake/GF_worries','shared');
+						gfWorriesBoppers.animation.addByPrefix('bop', 'gfDance', 24, false);
+						gfWorriesBoppers.antialiasing = true;
+						gfWorriesBoppers.scrollFactor.set(0.9, 0.9);
+						gfWorriesBoppers.setGraphicSize(Std.int(gfWorriesBoppers.width * 1));
+						gfWorriesBoppers.updateHitbox();
+						if(FlxG.save.data.distractions){
+							add(gfWorriesBoppers);
+						}
+
+						PicoWorriesBoppers = new FlxSprite(1725.1, 579.15);
+						PicoWorriesBoppers.frames = Paths.getSparrowAtlas('Pancake/Pico_worries','shared');
+						PicoWorriesBoppers.animation.addByPrefix('bop', 'Pico Idle Dance', 24, false);
+						PicoWorriesBoppers.antialiasing = true;
+						PicoWorriesBoppers.scrollFactor.set(0.9, 0.9);
+						PicoWorriesBoppers.setGraphicSize(Std.int(PicoWorriesBoppers.width * 1));
+						PicoWorriesBoppers.updateHitbox();
+						if(FlxG.save.data.distractions){
+							add(PicoWorriesBoppers);
+						}
+
+						bfWorriesBoppers = new FlxSprite(2100.05, 629.6);
+						bfWorriesBoppers.frames = Paths.getSparrowAtlas('Pancake/BF_worries','shared');
+						bfWorriesBoppers.animation.addByPrefix('bop', 'BF idle', 24, false);
+						bfWorriesBoppers.antialiasing = true;
+						bfWorriesBoppers.scrollFactor.set(0.9, 0.9);
+						bfWorriesBoppers.setGraphicSize(Std.int(bfWorriesBoppers.width * 1));
+						bfWorriesBoppers.updateHitbox();
+						if(FlxG.save.data.distractions){
+							add(bfWorriesBoppers);
+					    }
+				}
+				case 'pancakestage2':
+				{
+						defaultCamZoom = 0.7;
+						curStage = 'pancakestage2';
+
+					    	var images = [];
+					    	var xml = [];
+				
+						    trace("caching images...");
+				
+						    for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
+					    	{
+						    	if (!i.endsWith(".png"))
+						    		continue;
+						    	images.push(i);
+				
+						    	if (!i.endsWith(".xml"))
+						    		continue;
+						    	xml.push(i);
+					    	}
+						    for (i in images)
+					    		{
+					    			var replaced = i.replace(".png","");
+					    			FlxG.bitmap.add(Paths.image("characters/" + replaced,"shared"));
+					    			trace("cached " + replaced);
+					    		}
+						
+					    	for (i in xml)
+					    		{
+					    			var replaced = i.replace(".xml","");
+						    		FlxG.bitmap.add(Paths.image("characters/" + replaced,"shared"));
+					    		} 
+
+						var bgpan2:FlxSprite = new FlxSprite(-32, -19.95).loadGraphic(Paths.image('Pancake 2/pancake2','shared'));
+						bgpan2.antialiasing = true;
+						bgpan2.scrollFactor.set(0.9, 0.9);
+						bgpan2.active = false;
+						bgpan2.alpha = 1;
+						add(bgpan2);
+
+				    	charBoppers = new FlxSprite(86.25, 131.55);
+						charBoppers.frames = Paths.getSparrowAtlas('Pancake 2/CharDance','shared');
+					    charBoppers.animation.addByPrefix('bop', 'CharDance', 24, false);
+				    	charBoppers.antialiasing = true;
+				    	charBoppers.scrollFactor.set(0.9, 0.9);
+				    	charBoppers.setGraphicSize(Std.int(charBoppers.width * 1));
+				    	charBoppers.updateHitbox();
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers);
+						}
+
+				    	charBoppers2 = new FlxSprite(86.25, 131.55);
+						charBoppers2.frames = Paths.getSparrowAtlas('Pancake 2/CharDanceNoBf','shared');
+					    charBoppers2.animation.addByPrefix('bop', 'CharDance No bf', 24, false);
+				    	charBoppers2.antialiasing = true;
+				    	charBoppers2.scrollFactor.set(0.9, 0.9);
+				    	charBoppers2.setGraphicSize(Std.int(charBoppers2.width * 1));
+				    	charBoppers2.updateHitbox();
+						charBoppers2.alpha = 0;
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers2);
+						}
+
+				    	charBoppers3 = new FlxSprite(86.25, 131.55);
+						charBoppers3.frames = Paths.getSparrowAtlas('Pancake 2/CharDanceNoBoat','shared');
+					    charBoppers3.animation.addByPrefix('bop', 'CharDance No boat', 24, false);
+				    	charBoppers3.antialiasing = true;
+				    	charBoppers3.scrollFactor.set(0.9, 0.9);
+				    	charBoppers3.setGraphicSize(Std.int(charBoppers3.width * 1));
+				    	charBoppers3.updateHitbox();
+						charBoppers3.alpha = 0;
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers3);
+						}
+
+				    	charBoppers4 = new FlxSprite(86.25, 131.55);
+						charBoppers4.frames = Paths.getSparrowAtlas('Pancake 2/CharDanceNoBank','shared');
+					    charBoppers4.animation.addByPrefix('bop', 'CharDance No bank', 24, false);
+				    	charBoppers4.antialiasing = true;
+				    	charBoppers4.scrollFactor.set(0.9, 0.9);
+				    	charBoppers4.setGraphicSize(Std.int(charBoppers4.width * 1));
+				    	charBoppers4.updateHitbox();
+						charBoppers4.alpha = 0;
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers4);
+						}
+
+				    	charBoppers5 = new FlxSprite(86.25, 131.55);
+						charBoppers5.frames = Paths.getSparrowAtlas('Pancake 2/CharDanceNoPhon','shared');
+					    charBoppers5.animation.addByPrefix('bop', 'CharDance No phon', 24, false);
+				    	charBoppers5.antialiasing = true;
+				    	charBoppers5.scrollFactor.set(0.9, 0.9);
+				    	charBoppers5.setGraphicSize(Std.int(charBoppers5.width * 1));
+				    	charBoppers5.updateHitbox();
+						charBoppers5.alpha = 0;
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers5);
+						}
+
+						charBoppers6 = new FlxSprite(86.25, 131.55);
+						charBoppers6.frames = Paths.getSparrowAtlas('Pancake 2/CharDanceConner','shared');
+					    charBoppers6.animation.addByPrefix('bop', 'CharDance No conner', 24, false);
+				    	charBoppers6.antialiasing = true;
+				    	charBoppers6.scrollFactor.set(0.9, 0.9);
+				    	charBoppers6.setGraphicSize(Std.int(charBoppers6.width * 1));
+				    	charBoppers6.updateHitbox();
+						charBoppers6.alpha = 0;
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers6);
+						}
+
+						charBoppers7 = new FlxSprite(86.25, 131.55);
+						charBoppers7.frames = Paths.getSparrowAtlas('Pancake 2/CharDanceTae','shared');
+					    charBoppers7.animation.addByPrefix('bop', 'CharDance No Tae', 24, false);
+				    	charBoppers7.antialiasing = true;
+				    	charBoppers7.scrollFactor.set(0.9, 0.9);
+				    	charBoppers7.setGraphicSize(Std.int(charBoppers7.width * 1));
+				    	charBoppers7.updateHitbox();
+						charBoppers7.alpha = 0;
+				    	if(FlxG.save.data.distractions){
+					    	add(charBoppers7);
+						}
 				}
 			default:
 			{
@@ -829,6 +1070,8 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-red';
 			case 'taeshoot':
 				gfVersion = 'taeshoot';
+			case 'taeworries':
+				gfVersion = 'taeworries';
 			case 'gf-wire':
 				gfVersion = 'gf-wire';
 			case 'gf-night':
@@ -900,6 +1143,14 @@ class PlayState extends MusicBeatState
 				dad.x = 626.45;
 				dad.y = 395.05;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'pancake-evil':
+				dad.x = 796.9;
+				dad.y = 719.4;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'pancake-sad':
+				dad.x = 762.4;
+				dad.y = 732.15;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
 
 
@@ -968,10 +1219,20 @@ class PlayState extends MusicBeatState
 				gf.x = 989.15;
 				gf.y = 345.6;
 			case 'jimmystage':
-				boyfriend.x = 1803.9;
-				boyfriend.y = 768.05;
+				boyfriend.x = 1472.05;
+				boyfriend.y = 715.45;
 				gf.x = 933.15;
 				gf.y = 221.7;
+			case 'pancakestage':
+				boyfriend.x = 1593.15;
+				boyfriend.y = 749.85;
+				gf.x = 930.9;
+				gf.y = 341.75;
+			case 'pancakestage2':
+				boyfriend.x = 1593.15;
+				boyfriend.y = 749.85;
+				gf.x = 933.15;
+				gf.y = 350.45;
 		}
 
 		add(gf);
@@ -988,6 +1249,10 @@ class PlayState extends MusicBeatState
 		    add(gfred);
 		    add(bfred);
 			add(bossred);
+		if (curStage == 'pancakestage2')
+		{ 
+			add(black); 
+		}
 		if (loadRep)
 		{
 			FlxG.watch.addQuick('rep rpesses',repPresses);
@@ -1212,6 +1477,59 @@ class PlayState extends MusicBeatState
 				case 'roses':
 					FlxG.sound.play(Paths.sound('ANGRY'));
 					schoolIntro(doof);
+				case 'evening':
+					FlxG.camera.zoom = 1.5;
+					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.scrollFactor.set();
+					camHUD.visible = false;
+
+					new FlxTimer().start(0.1, function(tmr:FlxTimer)
+					{
+						remove(blackScreen);
+						camFollow.x += 600;
+						camFollow.y += 200;
+
+					new FlxTimer().start(1, function(tmr:FlxTimer)
+					{
+						boyfriend.playAnim('hey');
+
+						new FlxTimer().start(1, function(tmr:FlxTimer)
+						{
+							camHUD.visible = true;
+							remove(blackScreen);
+								{
+									startCountdown();
+								}
+							});
+						});
+					});
+				case "the-jimmy":
+					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.scrollFactor.set();
+					camHUD.visible = false;
+	
+					new FlxTimer().start(0.1, function(tmr:FlxTimer)
+					{
+						remove(blackScreen);
+						FlxG.camera.zoom = 1.5;
+						camFollow.x = 1330.45;
+						camFollow.y = 540.8;
+	
+						new FlxTimer().start(0.8, function(tmr:FlxTimer)
+						{
+							camHUD.visible = true;
+							remove(blackScreen);
+							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 0.8, {
+								ease: FlxEase.quadInOut,
+								onComplete: function(twn:FlxTween)
+								{
+									startCountdown();
+								}
+							});
+						});
+					});
 				case 'thorns':
 					schoolIntro(doof);
 				default:
@@ -2650,8 +2968,7 @@ class PlayState extends MusicBeatState
 									bossred.playAnim('singLEFT' + altAnim, true);
 								else
 									dad.playAnim('singLEFT' + altAnim, true);
-						}
-						
+						}											
 						if (FlxG.save.data.cpuStrums)
 						{
 							cpuStrums.forEach(function(spr:FlxSprite)
@@ -2795,6 +3112,7 @@ class PlayState extends MusicBeatState
 			bgred.alpha = 0;
 
 			//Wow they glow
+			black.alpha = 0;
 			bfred.alpha = 1;
 			gfred.alpha = 1;
 			bossred.alpha = 1;
@@ -2879,8 +3197,7 @@ class PlayState extends MusicBeatState
 					switch(SONG.song.toLowerCase()) //make it play when storyend - TaeYai
 					{
 						case "boss-fight":
-								var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('bossfightCutsceneEnd'), new Ending(), false, false, false);
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutsceneEnd.webm",new Ending()));
 									if (accuracy > 10 && storyDifficulty != 0)
 									{
 										trace("Good save");
@@ -2970,8 +3287,7 @@ class PlayState extends MusicBeatState
 				            var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
 								video.playMP4(Paths.video('eveningCutscene'), new PlayState(), false, false, false);
 						case 'boss-fight':
-							var video:VideoHandlerMP4 = new VideoHandlerMP4();  //just change the name in ' '
-								video.playMP4(Paths.video('bossfightCutscene'), new PlayState(), false, false, false);
+							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bossfightCutscene.webm",new PlayState()));
                         default:
                             LoadingState.loadAndSwitchState(new PlayState());
                      }
@@ -3016,7 +3332,7 @@ class PlayState extends MusicBeatState
                 sploosh.cameras = [camHUD];
                 sploosh.animation.play('splash ' + FlxG.random.int(0, 1) + " " + daNote.noteData);
                 sploosh.alpha = 0.6;
-                sploosh.offset.x += 90;
+                sploosh.offset.x += 50;
                 sploosh.offset.y += 80;
                 sploosh.animation.finishCallback = function(name) sploosh.kill();
             }
@@ -3603,7 +3919,7 @@ class PlayState extends MusicBeatState
 							boyfriend.playAnim('singDOWNmiss', true);
 					case 2:
 						if(Wired)
-							bfred.playAnim('singUPmiss', true);
+							bfred.playAnim('singUPmiss' , true);
 						else
 							boyfriend.playAnim('singUPmiss', true);
 					case 3:
@@ -3939,6 +4255,7 @@ class PlayState extends MusicBeatState
 			switch (curStep) //Make Them Glow!
 			{
 				        case 880:
+					     		black.alpha = 1;
 								dad.alpha = 0;
 								boyfriend.alpha = 0;
 								gf.alpha = 0;
@@ -3957,7 +4274,180 @@ class PlayState extends MusicBeatState
 						        Wired = false;
 						        Wiredover();
 				}
-		
+		if (SONG.song.toLowerCase() == 'the-jimmy')
+			switch (curStep)
+			{
+			        	case 72:
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuan2');
+								add(boyfriend);
+						case 202:
+								remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuan');
+								add(boyfriend);
+						case 408:
+								remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuan2');
+								add(boyfriend);
+						case 512:
+								remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuanboth');
+								add(boyfriend);
+						case 640:
+								remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuan');
+								add(boyfriend);
+						case 704:
+								remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuan2');
+								add(boyfriend);					
+						case 768:
+								remove(boyfriend);
+								boyfriend = new Boyfriend(1472.05, 715.45, 'bfyuanboth');
+								add(boyfriend);			
+				}
+		if (SONG.song.toLowerCase() == 'lost-control')
+			switch (curStep)
+				{
+						case 1280:
+							    boyfriend.playAnim('attack');
+							    health -= 1.9;
+								FlxG.sound.play(Paths.sound('laserandbodyhit'));
+						}
+		if (SONG.song.toLowerCase() == 'memorie')
+			switch (curStep)
+				{
+					    case 134:
+							    boyfriend.playAnim('hey');	
+								camMovement = 0.09;
+								defaultCamZoom = 1.0;		
+						case 138:
+							    FlxG.camera.flash(FlxColor.WHITE, 1);
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;
+								charBoppers.alpha = 0;
+								charBoppers2.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1627.85, 765.65, 'bf');
+								add(boyfriend);
+								iconP1.animation.play('bf');	
+						case 232:
+							    camMovement = 0.09;
+							    defaultCamZoom = 0.9;	
+						case 240:
+							    camMovement = 0.09;
+							    defaultCamZoom = 0.10;
+						case 248:
+							    camMovement = 0.09;
+							    defaultCamZoom = 0.15;	
+						case 256:
+							    camMovement = 0.09;
+							    defaultCamZoom = 0.20;														
+						case 266:
+							    FlxG.camera.flash(FlxColor.WHITE, 1);
+								camMovement = 0.09;
+								defaultCamZoom = 0.7;	
+								charBoppers.alpha = 1;
+								charBoppers2.alpha = 0;						
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1593.15, 749.85, 'miniyuan');
+								add(boyfriend);
+								iconP1.animation.play('miniyuan');		
+						case 394:
+							    FlxG.camera.flash(FlxColor.WHITE, 1);
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;	
+								charBoppers.alpha = 0;
+								charBoppers2.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1627.85, 765.65, 'bf');
+								add(boyfriend);
+								iconP1.animation.play('bf');		
+						case 522:
+							    FlxG.camera.flash(FlxColor.WHITE, 1);	
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;
+								charBoppers2.alpha = 0;
+								charBoppers3.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1605.3, 391.95, 'boat');
+								add(boyfriend);
+								iconP1.animation.play('boat');		
+						case 650:
+							    FlxG.camera.flash(FlxColor.WHITE, 1);	
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;
+								charBoppers3.alpha = 0;
+								charBoppers4.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1609.95, 411.6, 'bank');
+								add(boyfriend);
+								iconP1.animation.play('bank');			
+						case 778:
+						     	FlxG.camera.flash(FlxColor.WHITE, 1);	
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;
+								charBoppers4.alpha = 0;
+								charBoppers5.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1614.3, 383.55, 'almondbon');
+								add(boyfriend);
+								iconP1.animation.play('almondbon');		
+						case 905:
+						     	FlxG.camera.flash(FlxColor.WHITE, 1);	
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;
+								charBoppers5.alpha = 0;
+								charBoppers6.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1614.3, 383.55, 'cat');
+								add(boyfriend);
+								iconP1.animation.play('cat');			
+						case 1034:
+						     	FlxG.camera.flash(FlxColor.WHITE, 1);	
+								camMovement = 0.09;
+								defaultCamZoom = 1.0;
+								charBoppers6.alpha = 0;
+								charBoppers7.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1628.35, 705.95, 'tae');
+								add(boyfriend);
+								iconP1.animation.play('tae');
+						case 1161:
+						     	FlxG.camera.flash(FlxColor.WHITE, 1);	
+								camMovement = 0.09;
+								defaultCamZoom = 1.5;
+								charBoppers7.alpha = 0;
+								charBoppers2.alpha = 1;
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1627.85, 765.65, 'bf');
+								add(boyfriend);
+								iconP1.animation.play('bf');
+								boyfriend.playAnim('hey');	
+						case 1168:
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;	
+						case 1358:
+							    FlxG.camera.flash(FlxColor.WHITE, 1);
+								camMovement = 0.09;
+								defaultCamZoom = 0.8;		
+								charBoppers.alpha = 1;
+								charBoppers2.alpha = 0;					
+							    remove(boyfriend);
+								boyfriend = new Boyfriend(1593.25, 749.75, 'miniyuansmile');
+								add(boyfriend);
+								iconP1.animation.play('miniyuansmile');			
+						case 1360:
+							    camMovement = 0.09;
+							    defaultCamZoom = 1.0;
+								remove(gf);
+								charBoppers.alpha = 0;
+						case 1422:
+							    camMovement = 0.09;
+							    defaultCamZoom = 0.8;
+								add(gf);
+								charBoppers.alpha = 1;
+						}
 
 
 		// yes this updates every step.
@@ -4060,7 +4550,6 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
-
 		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
 		{
 			boyfriend.playAnim('hey', true);
@@ -4084,6 +4573,28 @@ class PlayState extends MusicBeatState
 					upperBoppers.animation.play('bop', true);
 					bottomBoppers.animation.play('bop', true);
 					santa.animation.play('idle', true);
+				}
+
+			case 'jimmystage':
+				if(FlxG.save.data.distractions){
+					PicoBoppers.animation.play('bop', true);
+					gfBoppers.animation.play('bop', true);
+				}
+			case 'pancakestage':
+				if(FlxG.save.data.distractions){
+					PicoWorriesBoppers.animation.play('bop', true);
+					gfWorriesBoppers.animation.play('bop', true);
+					bfWorriesBoppers.animation.play('bop', true);
+				}
+			case 'pancakestage2':
+				if(FlxG.save.data.distractions){
+					charBoppers.animation.play('bop', true);
+					charBoppers2.animation.play('bop', true);
+					charBoppers3.animation.play('bop', true);
+					charBoppers4.animation.play('bop', true);
+					charBoppers5.animation.play('bop', true);
+					charBoppers6.animation.play('bop', true);
+					charBoppers7.animation.play('bop', true);
 				}
 
 			case 'limo':
