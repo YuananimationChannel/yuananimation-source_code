@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="HeadBoppers.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="HeadBoppers0000" x="0" y="0" width="2576" height="440" frameX="-17" frameY="-20" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0001" x="0" y="0" width="2576" height="440" frameX="-17" frameY="-20" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0002" x="0" y="480" width="2583" height="445" frameX="-13" frameY="-15" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0003" x="0" y="480" width="2583" height="445" frameX="-13" frameY="-15" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0004" x="0" y="965" width="2589" height="450" frameX="-9" frameY="-10" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0005" x="0" y="965" width="2589" height="450" frameX="-9" frameY="-10" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0006" x="0" y="1455" width="2596" height="454" frameX="-5" frameY="-5" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0007" x="0" y="1455" width="2596" height="454" frameX="-5" frameY="-5" frameWidth="2604" frameHeight="460"/>
+	<SubTexture name="HeadBoppers0008" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0009" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0010" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0011" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0012" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0013" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0014" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0015" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0016" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0017" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0018" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0019" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0020" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0021" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0022" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0023" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0024" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0025" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0026" x="0" y="1949" width="2604" height="460"/>
+	<SubTexture name="HeadBoppers0027" x="0" y="1949" width="2604" height="460"/>
+</TextureAtlas>

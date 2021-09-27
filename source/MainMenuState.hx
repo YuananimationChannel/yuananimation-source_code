@@ -42,7 +42,7 @@ class MainMenuState extends MusicBeatState
 
 	var checker:FlxBackdrop = new FlxBackdrop(Paths.image('Checker'), 0.2, 0.2, true, true);
 
-	public static var kadeEngineVer:String = "1.5.1" + nightly;
+	public static var kadeEngineVer:String = "1.5.4" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
 	var magenta:FlxSprite;
@@ -315,7 +315,8 @@ class MainMenuState extends MusicBeatState
 				FlxG.switchState(new FreeplayState());
 
 				trace("Freeplay Menu Selected");
-
+			case 'donate':
+				FlxG.switchState(new CreditState());
 			case 'options':
 				FlxG.switchState(new OptionsMenu());
 		}

@@ -17,19 +17,17 @@
 	<SubTexture name="Tae idle0012" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
 	<SubTexture name="Tae idle0013" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
 	<SubTexture name="Tae idle0014" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0015" x="0" y="0" width="703" height="662" frameX="0" frameY="-9" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0016" x="0" y="0" width="703" height="662" frameX="0" frameY="-9" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0017" x="743" y="0" width="699" height="657" frameX="-2" frameY="-14" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0018" x="1482" y="0" width="699" height="657" frameX="-2" frameY="-14" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0019" x="2221" y="0" width="699" height="664" frameX="-2" frameY="-7" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0020" x="2221" y="0" width="699" height="664" frameX="-2" frameY="-7" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0021" x="2960" y="0" width="699" height="667" frameX="-2" frameY="-4" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0022" x="2960" y="0" width="699" height="667" frameX="-2" frameY="-4" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0015" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0016" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0017" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0018" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0019" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0020" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0021" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0022" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
 	<SubTexture name="Tae idle0023" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
 	<SubTexture name="Tae idle0024" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0025" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0026" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0027" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0028" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
-	<SubTexture name="Tae idle0029" x="0" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
+	<SubTexture name="Tae idle0025" x="739" y="707" width="703" height="671"/>
+	<SubTexture name="Tae idle0026" x="739" y="707" width="703" height="671"/>
+	<SubTexture name="Tae idle0027" x="1482" y="707" width="699" height="671" frameX="-2" frameY="0" frameWidth="703" frameHeight="671"/>
 </TextureAtlas>

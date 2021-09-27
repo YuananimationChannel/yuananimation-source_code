@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.gamepad.FlxGamepad;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
@@ -28,8 +29,8 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Yuan Time', 'Evening', 'Boss Fight'],
-		['The Jimmy', 'Lost Control', 'Memorie']
+		['Yuan Time', 'Evening', 'Boss Fight Old'],
+		['The Jimmy', 'Lost Control', 'Memorie', 'Apocalypse']
 	];
 	var curDifficulty:Int = 2;
 
@@ -279,45 +280,39 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
-			var diffic = "";
 
-			switch (curDifficulty)
-			{
-				case 0:
-					diffic = '-easy';
-				case 2:
-					diffic = '-hard';
-			}
-			
 			PlayState.storyDifficulty = curDifficulty;
-			PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + diffic, StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
+
+			// adjusting the song name to be compatible
+			var songFormat = StringTools.replace(PlayState.storyPlaylist[0], " ", "-");
+			switch (songFormat) {
+				case 'Dad-Battle': songFormat = 'Dadbattle';
+				case 'Philly-Nice': songFormat = 'Philly';
+			}
+
+			var poop:String = Highscore.formatSong(songFormat, curDifficulty);
+			PlayState.sicks = 0;
+			PlayState.bads = 0;
+			PlayState.shits = 0;
+			PlayState.goods = 0;
+			PlayState.campaignMisses = 0;
+			PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-			new FlxTimer().start(0.5, function(tmr:FlxTimer)
+			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				if (curWeek == 1)
 					{
-						if (FlxG.save.data.dub)
-							{
-								var video:VideoHandlerMP4 = new VideoHandlerMP4();
-								video.playMP4(Paths.video('yuantimeCutscene'), new PlayState(), false, false, false);
-							}
-						else if (!FlxG.save.data.dub)
-							{
-								var video:VideoHandlerMP4 = new VideoHandlerMP4();
-								video.playMP4(Paths.video('yuantimeCutscene'), new PlayState(), false, false, false); //just change the name in ' '
-							}
-					}
+						var video:MP4Handler = new MP4Handler();
+						video.playMP4(Paths.video('yuantimeCutscene'), new PlayState(), false, false, false);
+					}															
 					else
 					{
 						LoadingState.loadAndSwitchState(new PlayState(), true);
-					}
-				//LoadingState.loadAndSwitchState(new PlayState(), true);
-			});
-			
+					}					
+			});			
 		}
-	}
-
+    }
 	function changeDifficulty(change:Int = 0):Void
 	{
 		curDifficulty += change;

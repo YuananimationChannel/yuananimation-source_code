@@ -1,61 +1,127 @@
-![Kade Engine logo](https://user-images.githubusercontent.com/26305836/110529589-4b4eb600-80ce-11eb-9c44-e899118b0bf0.png)
+# hxCodec - Native video support for HaxeFlixel/OpenFL
+*Made by PolybiusProxy.*
 
-[![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Windows?label=windows%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Macos?label=macOS%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts)  [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Linux?label=linux%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/KadeEngineWeb?label=html5&20build)](https://ci.appveyor.com/project/daniel11420/KadeEngineWeb) [![Discord](https://img.shields.io/discord/808039740464300104?label=discord)](https://discord.gg/MG6GQFh52U) [![GitHub issues](https://img.shields.io/github/issues/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/KadeDev/Kade-Engine)](https://github.com/KadeDev/Kade-Engine/pulls) []() []()
+Original Repository - `https://github.com/polybiusproxy/PolyEngine`.
 
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/KadeDev/Kade-Engine/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/KadeDev/Kade-Engine) ![Lines of code](https://img.shields.io/tokei/lines/github/KadeDev/Kade-Engine) ![Supported platforms](https://img.shields.io/badge/supported%20platforms-windows%2C%20macOS%2C%20linux%2C%20html5-blue) ![GitHub all releases](https://img.shields.io/github/downloads/KadeDev/Kade-Engine/total) ![GitHub](https://img.shields.io/github/license/KadeDev/Kade-Engine) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/KadeDev/Kade-Engine?include_prereleases&label=latest%20version) 
+[Click here to check the roadmap of hxCodec here](https://github.com/brightfyregit/Friday-Night-Funkin-Mp4-Video-Support/projects/1)
+  
+### 1. Download the repository:
+You can either download it as a ZIP,
+or git cloning it.
 
-# Friday Night Funkin': Kade Engine
-## Friday Night Funkin'
-**Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
+### 2. Edit `Project.xml`
 
-Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
-> Uh oh! Your tryin to kiss ur hot girlfriend, but her MEAN and EVIL dad is trying to KILL you! He's an ex-rockstar, the only way to get to his heart? The power of music... 
+After:
 
-## Kade Engine
-**Kade Engine** is a mod for Friday Night Funkin', including a full engine rework, replays, and more.
+```xml
+<assets path="assets/week6"    library="week6"    exclude="*.ogg" if="web"/>
+<assets path="assets/week6"    library="week6"    exclude="*.mp3" unless="web"/>
+```
 
-Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play in browser](https://funkin.puyo.xyz) ⋅ [latest stable release](https://github.com/KadeDev/Kade-Engine/releases/latest) ⋅ [latest development build (windows)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) ⋅ [latest development build (macOS)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts) ⋅ [latest development build (linux)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts)**
+Put:
 
-**REMEMBER**: This is a **mod**. This is not the vanilla game and should be treated as a **modification**. This is not and probably will never be official, so don't get confused.
+```xml
+<assets path="assets/videos" exclude="*.mp3" if="web"/>
+<assets path="assets/videos" exclude="*.ogg" unless="web"/>
 
-## Website ([KadeDev.github.io/kade-engine/](https://KadeDev.github.io/Kade-Engine/))
-If you're looking for documentation, changelogs, or guides, you can find those on the Kade Engine website.
+<assets path="plugins/" rename='' if="windows"/>
+<assets path="dlls/" rename='' if="windows"/>
+```
 
-# Previews ([skip](#features))
+### 3. Setting up the paths
 
-![Tutorial (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113989685-fa5aea80-9850-11eb-9180-f5819a774c79.gif) ![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113990845-2c208100-9852-11eb-8e6d-f1c9e8439871.gif)
+In `Paths.hx`, put this code:
 
-![Roses (Hard) on Upscroll](https://user-images.githubusercontent.com/15311104/113993573-e31dfc00-9854-11eb-82ae-1f29dc8a0b04.png)
+After:
+```haxe	
+inline static public function soundRandom(key:String, min:Int, max:Int, ?library:String)
+{
+	return sound(key + FlxG.random.int(min, max), library);
+}
+```
 
-![Milf (Hard) on Downscroll](https://user-images.githubusercontent.com/15311104/113991654-f4660900-9852-11eb-8c3d-f3927571f19b.png)
+Put:
+```haxe
+inline static public function video(key:String, ?library:String)
+{
+	trace('assets/videos/$key.mp4');
+	return getPath('videos/$key.mp4', BINARY, library);
+}
+```
 
-![He malding](https://user-images.githubusercontent.com/15311104/113993693-02b52480-9855-11eb-9975-eb8a7a1be8d1.png)
+### 4. Playing videos
 
-![Free Play selection screen](https://i.imgur.com/LR0eWIC.png)
+Put your video in assets/videos.
+**WARNING: IT MUST BE IN 1280x720px.**
 
-![Options Menu](https://i.imgur.com/LBXW9C1.png)
+To play a video at the beginning of a week in Story Mode, add the following code in `StoryMenuState.hx`:
 
-# Features
+First, add a variable called `isCutscene`:
 
- - **New Input System**
-	 - An improved input system, similar to Quaver or Etterna, with less delays, less dropped inputs and other improvements.
- - **More information during gameplay**
-	 - While you're playing, we show you information about how you're doing, such as your accuracy, combo break count, notes per second, and your grade/rating.
- - **Customizable keybinds**
-	 - Instead of being forced to use WASD and the arrow keys, you can customize the keybinds to any keys you want!
- - **Replays** (in beta)
-	 - Have you ever gotten a crazy score but didn't record? The replay system solves that: it automatically saves a "replay" of your gameplay every time you complete a song, which you can play back inside of the game. 
-	 - Replays just store information about what you're doing, they don't actually record the screen -- so they take up way less space on your disk than videos.
- - **Audio offset**
-	 - If your headphones are delayed, you can set an offset in the options menu to line the game up with the delay and play with synced audio like intended.
+```haxe
+var isCutscene:Bool = false;
+```
+
+Then replace these lines:
+
+```haxe 
+new FlxTimer().start(1, function(tmr:FlxTimer)
+{
+	LoadingState.loadAndSwitchState(new PlayState(), true);
+});
+```
+
+with:
+
+```haxe
+var video:MP4Handler = new MP4Handler();
+
+if (curWeek == 0 && !isCutscene) // Checks if the current week is Tutorial.
+{
+    video.playMP4(Paths.video('yourvideonamehere'), new PlayState()); 
+    isCutscene = true;
+}
+else
+{
+    new FlxTimer().start(1, function(tmr:FlxTimer)
+    {
+        if (isCutscene)
+            video.onVLCComplete();
+
+        LoadingState.loadAndSwitchState(new PlayState(), true);
+    });
+}
+```
+
+To play a cutscene before another week, replace `curWeek == 0` with the number of the week of your choice (-1, because arrays start from 0).
+
+To play a cutscene after an individual song, place the following code in `PlayState.hx` before the line `prevCamFollow = camFollow;` in the `endSong()` function. You can wrap it in an "if" statement if you'd like to restrict it to a specific song.
+
+```haxe
+var video:MP4Handler = new MP4Handler();
+video.playMP4(Paths.video('yourvideonamehere'), new PlayState()); 
+```
+
+## Outputting to a FlxSprite
+
+There are many reasons to do this, as with a FlxSprite you can do layering in play state. or where ever else.
+
+To do this simply make a FlxSprite and do a playMP4 call with the argument. Then just add the sprite, and you're done!
+
+
+```haxe
+var sprite:FlxSprite = new FlxSprite(0,0);
+
+var video:MP4Handler = new MP4Handler();
+video.playMP4(Paths.video('yourvideonamehere'), null, sprite); // make the transition null so it doesn't take you out of this state
+
+add(sprite);
+```
 
 # Credits
-### Friday Night Funkin'
- - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programming
- - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art
- - [Kawai Sprite](https://twitter.com/kawaisprite) - Music
 
-This game was made with love to Newgrounds and its community. Extra love to Tom Fulp.
-### Kade Engine
-- [KadeDeveloper](https://twitter.com/KadeDeveloper) - Maintainer and lead programmer
-- [The contributors](https://github.com/KadeDev/Kade-Engine/graphs/contributors)
+- [PolybiusProxy (me)](https://github.com/polybiusproxy) - Creator of hxCodec.
+- [datee]() - Creator of HaxeVLC.
+- [BrightFyre](https://github.com/brightfyregit) - Creator of repository.
+- [GWebDev](https://github.com/GrowtopiaFli) - Inspiring me to do this.
+- The contributors

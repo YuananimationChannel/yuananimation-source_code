@@ -24,3 +24,5 @@ bfyuan2
 pancake-evil
 pancake-sad
 miniyuanmad
+boss-ultra
+bf-final

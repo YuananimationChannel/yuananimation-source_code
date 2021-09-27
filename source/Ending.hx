@@ -42,7 +42,7 @@ class Ending extends MusicBeatState
 			+ "\nYou can go and play it!",
 			32);
 		
-		txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
+		txt.setFormat("PanopticaPixel", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
 		txt.borderColor = FlxColor.BLACK;
 		txt.borderSize = 3;
 		txt.borderStyle = FlxTextBorderStyle.OUTLINE;

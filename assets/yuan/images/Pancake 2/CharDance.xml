@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="CharDance.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CharDance0000" x="0" y="0" width="2355" height="902" frameX="0" frameY="-18" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0001" x="2395" y="0" width="2355" height="902" frameX="0" frameY="-18" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0002" x="4790" y="0" width="2350" height="908" frameX="-3" frameY="-12" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0003" x="4790" y="0" width="2350" height="908" frameX="-3" frameY="-12" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0004" x="0" y="948" width="2353" height="915" frameX="-6" frameY="-6" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0005" x="2393" y="948" width="2353" height="915" frameX="-6" frameY="-6" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0006" x="4786" y="948" width="2356" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0007" x="0" y="1909" width="2356" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0008" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0009" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0010" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0011" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0012" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0013" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0014" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0015" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0016" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0017" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0018" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0019" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0020" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0021" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0022" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0023" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0024" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0025" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0026" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+	<SubTexture name="CharDance0027" x="2396" y="1909" width="2357" height="921" frameX="-10" frameY="0" frameWidth="2367" frameHeight="921"/>
+</TextureAtlas>

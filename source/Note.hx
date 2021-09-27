@@ -51,7 +51,10 @@ class Note extends FlxSprite
 		x += 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
 		y -= 2000;
-		this.strumTime = strumTime;
+		if (inCharter)
+			this.strumTime = strumTime;
+		else 
+			this.strumTime = Math.round(strumTime);
 
 		if (this.strumTime < 0 )
 			this.strumTime = 0;
@@ -60,7 +63,14 @@ class Note extends FlxSprite
 
 		var daStage:String = PlayState.curStage;
 
-		switch (PlayState.SONG.noteStyle)
+		//defaults if no noteStyle was found in chart
+		var noteTypeCheck:String = 'normal';
+
+		if (PlayState.SONG.noteStyle == null) {
+			switch(PlayState.storyWeek) {case 6: noteTypeCheck = 'pixel';}
+		} else {noteTypeCheck = PlayState.SONG.noteStyle;}
+
+		switch (noteTypeCheck)
 		{
 			case 'pixel':
 				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
@@ -87,7 +97,7 @@ class Note extends FlxSprite
 
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
-            default:
+			default:
 				frames = Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
@@ -108,44 +118,26 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
-				
+
 				if(noteType == 2)
-				{
-		
-					frames = Paths.getSparrowAtlas('special/NOTE_assets');
-					animation.addByPrefix('greenScroll', 'green0');
-					animation.addByPrefix('redScroll', 'red0');
-					animation.addByPrefix('blueScroll', 'blue0');
-					animation.addByPrefix('purpleScroll', 'purple0');
-	
-					animation.addByPrefix('purpleholdend', 'pruple end hold');
-					animation.addByPrefix('greenholdend', 'green hold end');
-					animation.addByPrefix('redholdend', 'red hold end');
-					animation.addByPrefix('blueholdend', 'blue hold end');
-	
-					animation.addByPrefix('purplehold', 'purple hold piece');
-					animation.addByPrefix('greenhold', 'green hold piece');
-					animation.addByPrefix('redhold', 'red hold piece');
-					animation.addByPrefix('bluehold', 'blue hold piece');
-	
-					setGraphicSize(Std.int(width * 0.7));
-					updateHitbox();
-					antialiasing = true;
-				}
-			
+					{
+						frames = Paths.getSparrowAtlas('dodge_note', 'shared');
+						animation.addByPrefix('greenScroll', 'green0');
+						animation.addByPrefix('redScroll', 'red0');
+						animation.addByPrefix('blueScroll', 'blue0');
+						animation.addByPrefix('purpleScroll', 'purple0');
+					}
 				if(noteType == 3)
 					{
-						frames = Paths.getSparrowAtlas('warningNote');
-						animation.addByPrefix('greenScroll', 'Green Arrow');
-						animation.addByPrefix('redScroll', 'Red Arrow');
-						animation.addByPrefix('blueScroll', 'Blue Arrow');
-						animation.addByPrefix('purpleScroll', 'Purple Arrow');
+						frames = Paths.getSparrowAtlas('health_assets', 'shared');
+						animation.addByPrefix('greenScroll', 'green0');
+						animation.addByPrefix('redScroll', 'red0');
+						animation.addByPrefix('blueScroll', 'blue0');
+						animation.addByPrefix('purpleScroll', 'purple0');
 					}
-				updateHitbox();
-				antialiasing = true;
-			
+				
 			case 'yuannote':
-			frames = Paths.getSparrowAtlas('Yuan/NOTE_assets');
+			frames = Paths.getSparrowAtlas('Yuan/NOTE_assets','yuan');
 			animation.addByPrefix('greenScroll', 'green0');
 			animation.addByPrefix('redScroll', 'red0');
 			animation.addByPrefix('blueScroll', 'blue0');
@@ -166,7 +158,7 @@ class Note extends FlxSprite
 			antialiasing = true;
 
 			case 'yuaneve':
-					frames = Paths.getSparrowAtlas('Evening/NOTE_assets');
+					frames = Paths.getSparrowAtlas('Evening/NOTE_assets','yuan');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -188,7 +180,7 @@ class Note extends FlxSprite
 				antialiasing = true;
 				                                                          
 		    case 'red':
-					frames = Paths.getSparrowAtlas('Red/NOTE_assets');
+					frames = Paths.getSparrowAtlas('Red/NOTE_assets','yuan');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -210,7 +202,7 @@ class Note extends FlxSprite
 				antialiasing = true;
 
 			case 'yuannight':
-					frames = Paths.getSparrowAtlas('Night/NOTE_assets');
+					frames = Paths.getSparrowAtlas('Night/NOTE_assets','yuan');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -229,7 +221,7 @@ class Note extends FlxSprite
 
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
-				antialiasing = true;
+				antialiasing = true;		
 		}
 
 		switch (noteData)

@@ -23,8 +23,6 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'bf-pixel':
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
-			case 'bf-red':
-				daBf = 'bf-red-dead';
 			default:
 				daBf = 'bf';
 		}
@@ -40,9 +38,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		add(camFollow);
 
 		FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
-		//FlxG.sound.play(Paths.sound('sorry'));
 		Conductor.changeBPM(100);
-		
 
 		// FlxG.camera.followLerp = 1;
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
@@ -80,21 +76,6 @@ class GameOverSubstate extends MusicBeatSubstate
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
-			switch (PlayState.SONG.stage)
-		    {
-			case 'yuanstage':
-				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
-				FlxG.sound.play(Paths.soundRandom('sorry', 1, 2));
-			case 'yuaneve':
-				FlxG.sound.play(Paths.soundRandom('sorry', 1, 2));
-				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
-				//FlxG.sound.play(Paths.sound('sorry'), 2);
-			case 'red':
-				FlxG.sound.play(Paths.soundRandom('boss', 1, 8));
-				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
-			default:
-				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
-		    }
 		}
 
 		if (FlxG.sound.music.playing)

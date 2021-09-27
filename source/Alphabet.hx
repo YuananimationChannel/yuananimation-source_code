@@ -22,9 +22,6 @@ class Alphabet extends FlxSpriteGroup
 	// for menu shit
 	public var targetY:Float = 0;
 	public var isMenuItem:Bool = false;
-	public var move:Bool = true;
-	public var isLabel:Bool = true;
-	public var tracker:FlxSprite;
 
 	public var text:String = "";
 
@@ -47,8 +44,14 @@ class Alphabet extends FlxSpriteGroup
 
 	var isBold:Bool = false;
 
+	var pastX:Float = 0;
+	var pastY:Float  = 0;
+
 	public function new(x:Float, y:Float, text:String = "", ?bold:Bool = false, typed:Bool = false, shouldMove:Bool = false)
 	{
+		pastX = x;
+		pastY = y;
+
 		super(x, y);
 
 		_finalText = text;
@@ -67,6 +70,24 @@ class Alphabet extends FlxSpriteGroup
 			}
 
 		}
+	}
+
+	public function reType(text)
+	{
+		for (i in listOAlphabets)
+			remove(i);
+		_finalText = text;
+		this.text = text;
+
+		lastSprite = null;
+
+		updateHitbox();
+
+		listOAlphabets.clear();
+		x = pastX;
+		y = pastY;
+		
+		addText();
 	}
 
 	public function addText()
@@ -236,10 +257,6 @@ class Alphabet extends FlxSpriteGroup
 
 			y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.30);
 			x = FlxMath.lerp(x, (targetY * 20) + 90, 0.30);
-			if (isLabel)
-				y -= 30;
-			if (move)
-				x = FlxMath.lerp(x, (targetY * 20) + 90, 0.30);
 		}
 
 		super.update(elapsed);

@@ -87,6 +87,15 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
+			case 'tutorial':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
+				box.animation.addByIndices('normal', 'speech bubble normal', [11], "", 24);		
+				box.width = 200;	
+				box.height = 200;	
+				box.x = -100;
+				box.y = 175;	
 		}
 
 		this.dialogueList = dialogueList;
@@ -94,23 +103,51 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 		
-		portraitLeft = new FlxSprite(-20, 40);
-		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
-		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-		portraitLeft.updateHitbox();
-		portraitLeft.scrollFactor.set();
-		add(portraitLeft);
-		portraitLeft.visible = false;
+		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+		{
+			portraitLeft = new FlxSprite(-20, 40);
+			portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+			portraitLeft.updateHitbox();
+			portraitLeft.scrollFactor.set();
+			add(portraitLeft);
+			portraitLeft.visible = false;
+		}
+		else if (PlayState.SONG.song.toLowerCase() == 'tutorial')
+		{
+			portraitLeft = new FlxSprite(-20, 40);
+			portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
+			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
+			portraitLeft.updateHitbox();
+			portraitLeft.scrollFactor.set();
+			add(portraitLeft);
+			portraitLeft.visible = false;			
+		}
 
-		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
-		portraitRight.updateHitbox();
-		portraitRight.scrollFactor.set();
-		add(portraitRight);
-		portraitRight.visible = false;
+		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+		{		
+			portraitRight = new FlxSprite(0, 40);
+			portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
+			portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
+			portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
+			portraitRight.updateHitbox();
+			portraitRight.scrollFactor.set();
+			add(portraitRight);
+			portraitRight.visible = false;
+		}
+		else if (PlayState.SONG.song.toLowerCase() == 'tutorial')
+		{
+			portraitRight = new FlxSprite(0, 40);
+			portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
+			portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
+			portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.9));
+			portraitRight.updateHitbox();
+			portraitRight.scrollFactor.set();
+			add(portraitRight);
+			portraitRight.visible = false;	
+		}		
 		
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -177,7 +214,7 @@ class DialogueBox extends FlxSpriteGroup
 			dialogueStarted = true;
 		}
 
-		if (FlxG.keys.justPressed.ANY  && dialogueStarted == true)
+		if (PlayerSettings.player1.controls.ACCEPT && dialogueStarted == true)
 		{
 			remove(dialogue);
 				
