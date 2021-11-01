@@ -64,7 +64,7 @@ class OptionsMenu extends MusicBeatState
 		[
 			new HITSOUND("When you tap the note it will play the sound")
 		]),
-		new OptionCategory("CUTSCENE", 
+		new OptionCategory("CUTSCENE VOICE LANGUAGE", 
 		[
 			new DUB("DUB")
 		]),

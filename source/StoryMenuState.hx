@@ -1,6 +1,5 @@
 package;
 
-import flixel.input.gamepad.FlxGamepad;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
@@ -29,26 +28,30 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Yuan Time', 'Evening', 'Boss Fight Old'],
-		['The Jimmy', 'Lost Control', 'Memorie', 'Apocalypse']
+		['Yuan Time', 'Evening', 'Boss Fight'],
+		['The Jimmy', 'Lost Control'],
+		['Memorie', 'Apocalypse']
 	];
 	var curDifficulty:Int = 2;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true, false];
 
 	var background:Array<String> = [
 		'gfandbf',
 		'yuan-chapter',
-        'yuan-chapter2'
+        'yuan-chapter2',
+		'yuan-memorie'
 	];
 
 	var weekNames:Array<String> = [
 		"tutorial",
 		"Chapter-1",
-		"Chapter-2"
+		"Chapter-2",
+		"Chapter-memorie"
 	];
 
 	var weekColors:Array<String> = [
+		"Brown",
 		"Brown",
 		"Brown",
 		"Brown"
@@ -280,39 +283,50 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
+			var diffic = "";
 
-			PlayState.storyDifficulty = curDifficulty;
-
-			// adjusting the song name to be compatible
-			var songFormat = StringTools.replace(PlayState.storyPlaylist[0], " ", "-");
-			switch (songFormat) {
-				case 'Dad-Battle': songFormat = 'Dadbattle';
-				case 'Philly-Nice': songFormat = 'Philly';
+			switch (curDifficulty)
+			{
+				case 0:
+					diffic = '-easy';
+				case 2:
+					diffic = '-hard';
 			}
-
-			var poop:String = Highscore.formatSong(songFormat, curDifficulty);
-			PlayState.sicks = 0;
-			PlayState.bads = 0;
-			PlayState.shits = 0;
-			PlayState.goods = 0;
-			PlayState.campaignMisses = 0;
-			PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
+			
+			PlayState.storyDifficulty = curDifficulty;
+			PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + diffic, StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+			new FlxTimer().start(0.5, function(tmr:FlxTimer)
 			{
 				if (curWeek == 1)
 					{
+						if (FlxG.save.data.dub)						
+							{						
+								var video:MP4Handler = new MP4Handler();
+								video.playMP4(Paths.video('yuantimeCutscene'), new PlayState(), false, false, false);
+							}							
+						else if (!FlxG.save.data.dub)
+							{	
+								var video:MP4Handler = new MP4Handler();
+								video.playMP4(Paths.video('yuantimeCutsceneEng'), new PlayState(), false, false, false);
+							}					
+					}
+				else if (curWeek == 2)
+					{
 						var video:MP4Handler = new MP4Handler();
-						video.playMP4(Paths.video('yuantimeCutscene'), new PlayState(), false, false, false);
-					}															
-					else
+						video.playMP4(Paths.video('memorieCutscene'), new PlayState(), false, false, false);
+					}					
+				else
 					{
 						LoadingState.loadAndSwitchState(new PlayState(), true);
-					}					
-			});			
+					}
+				//LoadingState.loadAndSwitchState(new PlayState(), true);
+			});
+			
 		}
-    }
+	}
+
 	function changeDifficulty(change:Int = 0):Void
 	{
 		curDifficulty += change;

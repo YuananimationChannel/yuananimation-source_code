@@ -54,6 +54,10 @@ class FreeplayState extends MusicBeatState
 		{
 			songs.push(new SongMetadata("beebaaboo", 2, "yuan"));
 		}
+	    if (StoryMenuState.weekUnlocked[3])
+		{
+			songs.push(new SongMetadata("we-are-one", 3, "yuan"));
+		}		
 
 		/* 
 			if (FlxG.sound.music != null)

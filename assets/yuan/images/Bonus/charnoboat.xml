@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="charnoboat.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="charDance no boat0000" x="0" y="0" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0001" x="0" y="0" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0002" x="1429" y="0" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0003" x="1429" y="0" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0004" x="0" y="925" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0005" x="0" y="925" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0006" x="1429" y="925" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0007" x="1429" y="925" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0008" x="0" y="1850" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0009" x="0" y="1850" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0010" x="0" y="1850" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0011" x="0" y="1850" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0012" x="0" y="1850" width="1389" height="885"/>
+	<SubTexture name="charDance no boat0013" x="0" y="1850" width="1389" height="885"/>
+</TextureAtlas>

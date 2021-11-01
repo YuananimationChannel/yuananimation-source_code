@@ -156,9 +156,9 @@ class MainMenuState extends MusicBeatState
 			}
 		});
 
-				var tex = Paths.getSparrowAtlas('FNF_main_menu_assets');
+				var tex = Paths.getSparrowAtlas('Menu_Thai');
 			
-				var tex2 = Paths.getSparrowAtlas('Menu_Thai');
+				var tex2 = Paths.getSparrowAtlas('FNF_main_menu_assets');
 			
 		
 
@@ -167,11 +167,11 @@ class MainMenuState extends MusicBeatState
 			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 160));
 			if(FlxG.save.data.eng)
 				{
-					menuItem.frames = tex;
+					menuItem.frames = tex2;
 				}
 			else if(!FlxG.save.data.eng)
 				{
-					menuItem.frames = tex2;
+					menuItem.frames = tex;
 					menuItem.scale.set(0.5, 0.5);
 				}
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);

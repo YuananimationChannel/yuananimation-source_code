@@ -199,13 +199,13 @@ class ResultsScreen extends FlxSubState
             { 
                 switch (PlayState.SONG.song.toLowerCase())
                 {
-                    case "boss-fight-old":
+                    case "boss-fight":
                        inCutscene = true;
                        PlayState.isStoryMode = true;
                        video.playMP4(Paths.video('bossfightCutsceneEnd'), new Ending()); 
                     default:       
                        FlxG.sound.playMusic(Paths.music('freakyMenu'));
-                       FlxG.switchState(new MainMenuState());
+                       FlxG.switchState(new StoryMenuState());
                 }
             }
             else

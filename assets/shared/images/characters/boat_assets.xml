@@ -118,11 +118,11 @@
 	<SubTexture name="Dad i wan to sing0002" x="433" y="854" width="392" height="740" frameX="0" frameY="-16" frameWidth="394" frameHeight="756"/>
 	<SubTexture name="Dad i wan to sing0003" x="865" y="854" width="391" height="742" frameX="0" frameY="-14" frameWidth="394" frameHeight="756"/>
 	<SubTexture name="Dad i wan to sing0004" x="1296" y="854" width="391" height="743" frameX="0" frameY="-13" frameWidth="394" frameHeight="756"/>
-	<SubTexture name="Dad i wan to sing0005" x="1727" y="854" width="391" height="743" frameX="0" frameY="-13" frameWidth="394" frameHeight="756"/>
-	<SubTexture name="Dad i wan to sing0006" x="2158" y="854" width="390" height="744" frameX="0" frameY="-12" frameWidth="394" frameHeight="756"/>
-	<SubTexture name="Dad i wan to sing0007" x="2588" y="854" width="390" height="744" frameX="0" frameY="-12" frameWidth="394" frameHeight="756"/>
-	<SubTexture name="Dad i wan to sing0008" x="3018" y="854" width="390" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>
-	<SubTexture name="Dad i wan to sing0009" x="3448" y="854" width="390" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>
+	<SubTexture name="Dad i wan to sing0005" x="1727" y="854" width="390" height="743" frameX="0" frameY="-13" frameWidth="394" frameHeight="756"/>
+	<SubTexture name="Dad i wan to sing0006" x="2157" y="854" width="390" height="744" frameX="0" frameY="-12" frameWidth="394" frameHeight="756"/>
+	<SubTexture name="Dad i wan to sing0007" x="2587" y="854" width="390" height="744" frameX="0" frameY="-12" frameWidth="394" frameHeight="756"/>
+	<SubTexture name="Dad i wan to sing0008" x="3017" y="854" width="390" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>
+	<SubTexture name="Dad i wan to sing0009" x="3447" y="854" width="390" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>
 	<SubTexture name="Dad i wan to sing0010" x="0" y="1639" width="390" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>
 	<SubTexture name="Dad i wan to sing0011" x="430" y="1639" width="389" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>
 	<SubTexture name="Dad i wan to sing0012" x="859" y="1639" width="389" height="745" frameX="0" frameY="-11" frameWidth="394" frameHeight="756"/>

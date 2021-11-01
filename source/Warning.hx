@@ -38,7 +38,7 @@ class Warning extends MusicBeatState
 			+ "\nPress Enter To Leave This Page",
 			32);
 		
-		txt.setFormat("PanopticaPixel", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
+		txt.setFormat("DTM-Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
 		txt.borderColor = FlxColor.BLACK;
 		txt.borderSize = 3;
 		txt.borderStyle = FlxTextBorderStyle.OUTLINE;

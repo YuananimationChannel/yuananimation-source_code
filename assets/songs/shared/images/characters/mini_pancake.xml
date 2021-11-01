@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mini_pancake.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Pancake evil Idle0000" x="0" y="0" width="278" height="422" frameX="-3" frameY="-4" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0001" x="0" y="0" width="278" height="422" frameX="-3" frameY="-4" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0002" x="318" y="0" width="283" height="426" frameX="0" frameY="0" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0003" x="318" y="0" width="283" height="426" frameX="0" frameY="0" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0004" x="641" y="0" width="278" height="418" frameX="-20" frameY="-8" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0005" x="641" y="0" width="278" height="418" frameX="-20" frameY="-8" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0006" x="959" y="0" width="278" height="416" frameX="-28" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0007" x="959" y="0" width="278" height="416" frameX="-28" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0008" x="1277" y="0" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0009" x="1277" y="0" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0010" x="1277" y="0" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0011" x="1277" y="0" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0012" x="1277" y="0" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil Idle0013" x="1277" y="0" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake evil note down0000" x="1594" y="0" width="276" height="418" frameX="0" frameY="0" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0001" x="1594" y="0" width="276" height="418" frameX="0" frameY="0" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0002" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0003" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0004" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0005" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0006" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0007" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0008" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0009" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0010" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0011" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0012" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0013" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0014" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0015" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0016" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0017" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0018" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0019" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0020" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0021" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0022" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0023" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note down0024" x="1910" y="0" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake evil note left0000" x="2227" y="0" width="316" height="415" frameX="-3" frameY="0" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0001" x="2227" y="0" width="316" height="415" frameX="-3" frameY="0" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0002" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0003" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0004" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0005" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0006" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0007" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0008" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0009" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0010" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0011" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0012" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0013" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0014" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0015" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0016" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0017" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0018" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0019" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0020" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0021" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0022" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0023" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note left0024" x="2583" y="0" width="314" height="414" frameX="0" frameY="-1" frameWidth="319" frameHeight="415"/>
+	<SubTexture name="Pancake evil note right0000" x="2937" y="0" width="282" height="417" frameX="0" frameY="0" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0001" x="2937" y="0" width="282" height="417" frameX="0" frameY="0" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0002" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0003" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0004" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0005" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0006" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0007" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0008" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0009" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0010" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0011" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0012" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0013" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0014" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0015" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0016" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0017" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0018" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0019" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0020" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0021" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0022" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0023" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note right0024" x="3259" y="0" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake evil note up0000" x="3578" y="0" width="273" height="430" frameX="-6" frameY="0" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0001" x="3578" y="0" width="273" height="430" frameX="-6" frameY="0" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0002" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0003" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0004" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0005" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0006" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0007" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0008" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0009" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0010" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0011" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0012" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0013" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0014" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0015" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0016" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0017" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0018" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0019" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake evil note up0020" x="0" y="470" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad idle0000" x="313" y="470" width="278" height="422" frameX="-3" frameY="-4" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0001" x="313" y="470" width="278" height="422" frameX="-3" frameY="-4" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0002" x="631" y="470" width="283" height="426" frameX="0" frameY="0" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0003" x="631" y="470" width="283" height="426" frameX="0" frameY="0" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0004" x="954" y="470" width="278" height="418" frameX="-20" frameY="-8" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0005" x="954" y="470" width="278" height="418" frameX="-20" frameY="-8" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0006" x="1272" y="470" width="278" height="416" frameX="-28" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0007" x="1272" y="470" width="278" height="416" frameX="-28" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0008" x="1590" y="470" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0009" x="1590" y="470" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0010" x="1590" y="470" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0011" x="1590" y="470" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0012" x="1590" y="470" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad idle0013" x="1590" y="470" width="277" height="416" frameX="-37" frameY="-10" frameWidth="314" frameHeight="426"/>
+	<SubTexture name="Pancake sad note down0000" x="1907" y="470" width="276" height="418" frameX="0" frameY="0" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0001" x="1907" y="470" width="276" height="418" frameX="0" frameY="0" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0002" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0003" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0004" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0005" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0006" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0007" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0008" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0009" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0010" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0011" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0012" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0013" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0014" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0015" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0016" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0017" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0018" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0019" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0020" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0021" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0022" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0023" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note down0024" x="2223" y="470" width="277" height="417" frameX="-9" frameY="-1" frameWidth="286" frameHeight="418"/>
+	<SubTexture name="Pancake sad note left0000" x="2540" y="470" width="272" height="415" frameX="-6" frameY="0" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0001" x="2540" y="470" width="272" height="415" frameX="-6" frameY="0" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0002" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0003" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0004" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0005" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0006" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0007" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0008" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0009" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0010" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0011" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0012" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0013" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0014" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0015" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0016" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0017" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0018" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0019" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0020" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0021" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0022" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0023" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note left0024" x="2852" y="470" width="273" height="414" frameX="0" frameY="-1" frameWidth="278" frameHeight="415"/>
+	<SubTexture name="Pancake sad note right0000" x="3165" y="470" width="282" height="417" frameX="0" frameY="0" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0001" x="3165" y="470" width="282" height="417" frameX="0" frameY="0" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0002" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0003" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0004" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0005" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0006" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0007" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0008" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0009" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0010" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0011" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0012" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0013" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0014" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0015" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0016" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0017" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0018" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0019" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0020" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0021" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0022" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0023" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note right0024" x="3487" y="470" width="279" height="415" frameX="-7" frameY="-2" frameWidth="286" frameHeight="417"/>
+	<SubTexture name="Pancake sad note up0000" x="3806" y="470" width="273" height="430" frameX="-6" frameY="0" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0001" x="3806" y="470" width="273" height="430" frameX="-6" frameY="0" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0002" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0003" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0004" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0005" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0006" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0007" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0008" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0009" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0010" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0011" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0012" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0013" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0014" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0015" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0016" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0017" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0018" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0019" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+	<SubTexture name="Pancake sad note up0020" x="0" y="940" width="273" height="427" frameX="0" frameY="-3" frameWidth="279" frameHeight="430"/>
+</TextureAtlas>

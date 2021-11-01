@@ -25,7 +25,7 @@ class CreditState extends MusicBeatState
 		
 		
 		super.create();
-		bgColor = 0xFF4D1B30;
+		bgColor = 0xFF000000;
 		var mural:FlxSprite = new FlxSprite();
 		
 		mural.loadGraphic(Paths.image("mural", "shared"));
@@ -33,7 +33,7 @@ class CreditState extends MusicBeatState
 		add(mural);
 		
 		var cred:FlxText = new FlxText(0,720,640,"",16);
-		cred.setFormat("PanopticaPixel", 32, CENTER);
+		cred.setFormat("DTM-Mono", 32, CENTER);
 		cred.setBorderStyle(FlxTextBorderStyle.OUTLINE, 0xFF000000, 2);
 		cred.alignment = "center";
 		cred.scrollFactor.set(1,1.5);

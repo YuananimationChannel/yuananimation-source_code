@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="charlight2.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="charDance 20000" x="0" y="0" width="1044" height="913"/>
+	<SubTexture name="charDance 20001" x="0" y="0" width="1044" height="913"/>
+	<SubTexture name="charDance 20002" x="1084" y="0" width="1044" height="913"/>
+	<SubTexture name="charDance 20003" x="1084" y="0" width="1044" height="913"/>
+	<SubTexture name="charDance 20004" x="2168" y="0" width="1044" height="913"/>
+	<SubTexture name="charDance 20005" x="0" y="953" width="1044" height="913"/>
+	<SubTexture name="charDance 20006" x="1084" y="953" width="1044" height="913"/>
+	<SubTexture name="charDance 20007" x="2168" y="953" width="1044" height="913"/>
+	<SubTexture name="charDance 20008" x="0" y="1906" width="1044" height="913"/>
+	<SubTexture name="charDance 20009" x="0" y="1906" width="1044" height="913"/>
+	<SubTexture name="charDance 20010" x="0" y="1906" width="1044" height="913"/>
+	<SubTexture name="charDance 20011" x="0" y="1906" width="1044" height="913"/>
+	<SubTexture name="charDance 20012" x="0" y="1906" width="1044" height="913"/>
+	<SubTexture name="charDance 20013" x="0" y="1906" width="1044" height="913"/>
+</TextureAtlas>

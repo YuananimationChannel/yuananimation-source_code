@@ -40,7 +40,7 @@ class HealthIcon extends FlxSprite
 		animation.add('dad', [12, 13], 0, false, isPlayer);
 		animation.add('boat', [40, 41], 0, false, isPlayer);
 		animation.add('boat-playable', [40, 41], 0, false, isPlayer);
-		animation.add('cat', [44, 45], 0, false, isPlayer);
+		animation.add('conner', [44, 45], 0, false, isPlayer);
 		animation.add('bank', [46, 47], 0, false, isPlayer);
 		animation.add('almondbon', [48, 49], 0, false, isPlayer);
 		animation.add('yuan', [24, 25], 0, false, isPlayer);
@@ -52,7 +52,7 @@ class HealthIcon extends FlxSprite
 		animation.add('bfyuanboth', [26, 27], 0, false, isPlayer);
 		animation.add('bf-final', [26, 27], 0, false, isPlayer);
 		animation.add('boss', [28, 29], 0, false, isPlayer);
-		animation.add('boss-ultra', [28, 29], 0, false, isPlayer);
+		animation.add('boss-ultra', [50, 51], 0, false, isPlayer);
 		animation.add('yuan-vibe', [24, 25], 0, false, isPlayer);
 		animation.add('yuan-night', [24, 25], 0, false, isPlayer);
 		animation.add('senpai', [22, 22], 0, false, isPlayer);

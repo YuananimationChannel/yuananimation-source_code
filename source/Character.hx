@@ -341,7 +341,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", 0, 27);
 				addOffset("singLEFT", -10, 10);
 				addOffset("singDOWN", 0, -30);
-				addOffset('Iwanttosing', -3, -3);
+				addOffset('singDOWN-alt', -3, -3);
 
 				playAnim('idle');
 
@@ -353,7 +353,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24);
 				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24);
 				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24);
-				animation.addByPrefix('Iwanttosing', 'Dad i wan to sing', 24);
 
 				addOffset('idle');
 				addOffset("singUP", -16, 51);
@@ -413,20 +412,20 @@ class Character extends FlxSprite
 
 				flipX = true;
 
-			case 'cat':
-				tex = Paths.getSparrowAtlas('characters/Pee', 'shared');
+			case 'conner':
+				tex = Paths.getSparrowAtlas('characters/Conner_assets', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Idle', 24);
-				animation.addByPrefix('singUP', 'Sing Up', 24);
-				animation.addByPrefix('singRIGHT', 'Sing Right', 24);
-				animation.addByPrefix('singDOWN', 'Sing Down', 24);
-				animation.addByPrefix('singLEFT', 'Sing Left', 24);
+				animation.addByPrefix('idle', 'Conner Idle', 24);
+				animation.addByPrefix('singUP', 'Conner Up Note', 24);
+				animation.addByPrefix('singRIGHT', 'Conner Right Note', 24);
+				animation.addByPrefix('singDOWN', 'Conner down note', 24);
+				animation.addByPrefix('singLEFT', 'Conner Left Note', 24);
 
 				addOffset('idle', 0,0 );
-				addOffset("singUP", -6, 50);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, -30);
+				addOffset("singUP", 36, 23);
+				addOffset("singRIGHT", 16, 32);
+				addOffset("singLEFT", 88, -1);
+				addOffset("singDOWN", 32, -2);
 
 				playAnim('idle');
 
@@ -836,6 +835,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('dodgeRIGHT', 'BF NOTE RIGHT DODGE', 24, false);
 				animation.addByPrefix('dodgeDOWN', 'BF NOTE DOWN DODGE', 24, false);
 				animation.addByPrefix('dodgeUP', 'BF NOTEUP DODGE', 24, false);
+				animation.addByPrefix('hit', 'BF hit yuan', 24, false);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -42, 33);
@@ -850,6 +850,7 @@ class Character extends FlxSprite
 				addOffset("dodgeRIGHT", -47, -7);
 				addOffset("dodgeDOWN", -22, -43);
 				addOffset("dodgeUP", -4, 24);
+				addOffset("hit", 55, 26);
 
 				playAnim('idle');
 

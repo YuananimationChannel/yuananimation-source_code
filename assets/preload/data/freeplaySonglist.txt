@@ -1,9 +1,10 @@
 Tutorial:gf:1
 Yuan Time:yuan:7
 Evening:yuan:7
+Boss Fight:boss:7
 The Jimmy:jimmy:8
 Lost Control:pancake-evil:8
 Memorie:pancake-sad:8
-Apocalypse:boss:8
+Apocalypse:boss-ultra:8
 We Are One:yuan:8
 Boss Fight Old:boss:7
